@@ -8,7 +8,7 @@ class About extends CI_Controller {
 			$this->load->helper('url'); // load the CodeIgniter URL helper
 			// map the base_url() function as a Twig function
 			$this->twiggy->register_function('base_url');
-			$this->twiggy->template('home')->display();
+			$this->twiggy->template('about')->display();
 			//$this->twiggy->display();
 	}
 }
