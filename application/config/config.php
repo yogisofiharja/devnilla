@@ -180,7 +180,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
+$config['log_threshold'] = 0;
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'myclientbase';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -357,9 +357,6 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-$config['modules_locations'] = array(
-    APPPATH.'modules_core/' => '../modules_core/',
-);
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
