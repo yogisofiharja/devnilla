@@ -19,12 +19,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-			$this->load->spark('Twiggy/0.8.5');
-			$this->load->helper('url'); // load the CodeIgniter URL helper
-			// map the base_url() function as a Twig function
-			$this->twiggy->register_function('base_url');
+			$this->load->spark('Twiggy/0.8.5');			
 			$this->twiggy->template('home')->display();
-			//$this->twiggy->display();
 	}
 }
 

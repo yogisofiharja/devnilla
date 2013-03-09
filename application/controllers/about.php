@@ -5,10 +5,6 @@ class About extends CI_Controller {
 	public function index()
 	{
 			$this->load->spark('Twiggy/0.8.5');
-			$this->load->helper('url'); // load the CodeIgniter URL helper
-			// map the base_url() function as a Twig function
-			$this->twiggy->register_function('base_url');
-			$this->twiggy->template('about')->display();
-			//$this->twiggy->display();
+			$this->twiggy->template('about')->display();			
 	}
 }
