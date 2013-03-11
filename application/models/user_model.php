@@ -26,6 +26,8 @@ class User_model extends CI_Model{
         $this->id_user=$data[0]->id_user;
         $this->username=$data[0]->username;
         $this->password=$data[0]->password;
+        $this->email=$data[0]->email;
+        $this->full_name=$data[0]->full_name;
         return $this;        
     }
     function save(){

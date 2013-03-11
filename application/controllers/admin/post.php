@@ -31,6 +31,7 @@ class Post extends CI_Controller {
 	$user->username=$this->input->post('username');
 	$user->full_name=$this->input->post('full_name');
 	$user->email=$this->input->post('email');
+	print_r($user);
 	$user->update();
 	redirect('admin/get/user');
     }
