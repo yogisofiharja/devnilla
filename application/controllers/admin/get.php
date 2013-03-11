@@ -24,12 +24,24 @@ class Get extends CI_Controller {
         $this->twiggy->set($data, NULL, FALSE);
         $this->twiggy->template('list_user')->display();
     }
+    function tambah_user($stat=NULL){
+        $data=array();
+        $data['stat']=$stat;
+        $this->load->spark('Twiggy/0.8.5');
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('tambah_user')->display();
+    }
     function update_user($id){
         $user = new User_model();
-        $data=array();
+        $data=array();        
         $data['user']=$user->get_by('id_user', $id);
         $this->load->spark('Twiggy/0.8.5');
         $this->twiggy->set($data, NULL, FALSE);
         $this->twiggy->template('update_user')->display();
+    }
+    function delete_user($id){
+        $user = new User_model();
+        $user->delete($id);
+        redirect('admin/get/user');
     }
 }

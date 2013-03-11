@@ -34,7 +34,7 @@ class User_model extends CI_Model{
         $data=array(
             'username'=> $this->username,
             'password'=> $this->password,
-            'full_name'=> $his->full_name,
+            'full_name'=> $this->full_name,
             'email'=> $this->email
         );
         $this->db->insert('user', $data);
