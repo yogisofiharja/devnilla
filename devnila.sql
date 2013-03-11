@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.2deb1ubuntu1
+-- version 3.5.7
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 15, 2013 at 08:09 AM
--- Server version: 5.1.41
--- PHP Version: 5.3.2-1ubuntu4.14
+-- Generation Time: Mar 11, 2013 at 06:46 PM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -33,11 +34,6 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`id_category`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `category`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -52,11 +48,6 @@ CREATE TABLE IF NOT EXISTS `contactus` (
   `date_post` datetime NOT NULL,
   PRIMARY KEY (`id_contact`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `contactus`
---
-
 
 -- --------------------------------------------------------
 
@@ -74,11 +65,6 @@ CREATE TABLE IF NOT EXISTS `page` (
   PRIMARY KEY (`id_page`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `page`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -90,11 +76,6 @@ CREATE TABLE IF NOT EXISTS `page_resource` (
   `page_id` int(11) NOT NULL,
   `resource_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `page_resource`
---
-
 
 -- --------------------------------------------------------
 
@@ -115,11 +96,6 @@ CREATE TABLE IF NOT EXISTS `post` (
   UNIQUE KEY `id_post_2` (`id_post`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `post`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -133,11 +109,6 @@ CREATE TABLE IF NOT EXISTS `post_category` (
   PRIMARY KEY (`id_post_category`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `post_category`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -150,11 +121,6 @@ CREATE TABLE IF NOT EXISTS `post_resource` (
   `resource_id` int(11) NOT NULL,
   PRIMARY KEY (`id_post_resource`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `post_resource`
---
-
 
 -- --------------------------------------------------------
 
@@ -175,11 +141,6 @@ CREATE TABLE IF NOT EXISTS `resource` (
   PRIMARY KEY (`id_resource`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `resource`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -190,16 +151,20 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
+  `full_name` varchar(150) NOT NULL,
   `email` varchar(200) NOT NULL,
   `user_type_id` int(11) NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `user`
 --
 
+INSERT INTO `user` (`id_user`, `username`, `password`, `full_name`, `email`, `user_type_id`, `date_modified`) VALUES
+(1, 'yogi', '938e14c074c45c62eb15cc05a6f36d79', 'Yogi Sofi Harja', 'hardja.ogie@gmail.com', 1, '2013-03-08 20:00:00'),
+(2, 'admin', '84fc02daf5252224f212e6383c243407', 'Admin Nurdin Nasution', 'admin@devnila.com', 1, '2013-03-06 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -213,8 +178,15 @@ CREATE TABLE IF NOT EXISTS `user_type` (
   `description` text NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`id_user_type`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `user_type`
 --
+
+INSERT INTO `user_type` (`id_user_type`, `name`, `description`, `date_modified`) VALUES
+(1, 'admin', 'admin', '2013-03-08 20:00:00');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
