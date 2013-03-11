@@ -16,4 +16,23 @@ class Post extends CI_Controller {
 			redirect("admin/login/index/error");
 		}
 	}
+    public function tambah_user(){
+	$user = new User_model();
+	$user->username=$this->input->post('username');
+	$user->password=md5($this->input->post('password'));
+	$user->full_name=$this->input->post('full_name');
+	$user->email=$this->input->post('email');
+	$user->save();
+	redirect('admin/get/user');
+    }
+    public function update_user($id){
+	$user = new User_model();
+	$user->id_user=$this->input->post('id_user');
+	$user->username=$this->input->post('username');
+	$user->full_name=$this->input->post('full_name');
+	$user->email=$this->input->post('email');
+	$user->update();
+	redirect('admin/get/user');
+    }
+    
 }

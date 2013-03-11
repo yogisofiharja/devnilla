@@ -64,7 +64,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Perfectum Dashboard" src="{{ base_url() }}bootstrap/img/logo20.png" /> <span class="hidden-phone">Perfectum Dashboard</span></a>
+				<a class="brand" href="{{ base_url() }}admin"> <img alt="Perfectum Dashboard" src="{{ base_url() }}bootstrap/img/logo20.png" /> <span class="hidden-phone">Perfectum Dashboard</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -98,26 +98,11 @@
 			<div class="span2 main-menu-span">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="{{ base_url() }}bootstrap/"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-						<li><a href="ui.html"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> UI Features</span></a></li>
-						<li><a href="form.html"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Forms</span></a></li>
-						<li><a href="chart.html"><i class="icon-list-alt icon-white"></i><span class="hidden-tablet"> Charts</span></a></li>
-						<li>
-							<a class="dropmenu" href="#"><i class="fa-icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span></a>
-							<ul>
-								<li><a class="submenu" href="submenu.html"><i class="fa-icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
-								<li><a class="submenu" href="submenu.html"><i class="fa-icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
-								<li><a class="submenu" href="submenu.html"><i class="fa-icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
-							</ul>	
-						</li>
-						<li><a href="typography.html"><i class="icon-font icon-white"></i><span class="hidden-tablet"> Typography</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture icon-white"></i><span class="hidden-tablet"> Gallery</span></a></li>
-						<li><a href="table.html"><i class="icon-align-justify icon-white"></i><span class="hidden-tablet"> Tables</span></a></li>
-						<li><a href="calendar.html"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendar</span></a></li>
-						<li><a href="grid.html"><i class="icon-th icon-white"></i><span class="hidden-tablet"> Grid</span></a></li>
-						<li><a href="file-manager.html"><i class="icon-folder-open icon-white"></i><span class="hidden-tablet"> File Manager</span></a></li>
-						<li><a href="icon.html"><i class="icon-star icon-white"></i><span class="hidden-tablet"> Icons</span></a></li>
-						<li><a href="login.html"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Login Page</span></a></li>
+						<li><a href="{{ base_url() }}admin"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+						<li><a href="{{ base_url() }}admin/get/user"><i class="icon-user icon-white"></i><span class="hidden-tablet"> Users </span></a></li>
+						<li><a href="{{ base_url() }}admin/get/pages"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Pages</span></a></li>
+						<li><a href="{{ base_url() }}admin/get/posts"><i class="icon-list-alt icon-white"></i><span class="hidden-tablet"> Posts</span></a></li>
+						
 					</ul>
 				</div><!--/.well -->
 			</div><!--/span-->

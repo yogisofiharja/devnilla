@@ -16,6 +16,39 @@ class User_model extends CI_Model{
             return true;
         }
     }
+    function all(){
+        $q=$this->db->get('user');
+        return $q->result();
+    }
+    function get_by($key, $value){
+        $q=$this->db->get_where('user', array($key=>$value));
+        $data=$q->result();
+        $this->id_user=$data[0]->id_user;
+        $this->username=$data[0]->username;
+        $this->password=$data[0]->password;
+        return $this;        
+    }
+    function save(){
+        $data=array(
+            'username'=> $this->username,
+            'password'=> $this->password,
+            'full_name'=> $his->full_name,
+            'email'=> $this->email
+        );
+        $this->db->insert('user', $data);
+    }
+    function delete($id){
+        $this->db->delete('user',array('id_user'=>$id));
+    }
+    function update(){
+        $data=array(
+            'username'=>$this->username,
+            'full_name'=>$this->full_name,
+            'email'=>$this->email
+        );
+        $this->db->where('id_user',$this->id_user);
+        $this->db->update('user', $data);
+    }
     
 }
 
