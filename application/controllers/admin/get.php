@@ -6,7 +6,7 @@ class Get extends CI_Controller {
         parent::__construct();
         $is_logged_in = $this->session->userdata('is_logged_in');
         if($is_logged_in==true){
-            //redirect('admin/get/index');
+            
         }else{
             redirect('admin/login');
             
