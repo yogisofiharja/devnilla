@@ -44,4 +44,34 @@ class Get extends CI_Controller {
         $user->delete($id);
         redirect('admin/get/user');
     }
+    function category(){
+        $this->load->spark('Twiggy/0.8.5');
+        $category=new Category_model();
+        $data=array();
+        $data['list_category']=$category->all();
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('list_category')->display();
+    }
+    function tambah_category($stat=NULL){
+        $data=array();
+        $data['stat']=$stat;
+        $this->load->spark('Twiggy/0.8.5');
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('tambah_category')->display();
+    }
+    function update_category($id){
+        $category = new Category_model();
+        $data=array();        
+        $data['category']=$category->get_by('id_category', $id);
+        $this->load->spark('Twiggy/0.8.5');
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('update_category')->display();
+    }
+    function delete_category($id){
+        $category = new Category_model();
+        $category->delete($id);
+        redirect('admin/get/category');
+    }
+    
+    
 }

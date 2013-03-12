@@ -38,5 +38,19 @@ class Post extends CI_Controller {
 	$user->update();
 	redirect('admin/get/user');
     }
-    
+    public function tambah_category(){
+	$category = new Category_model();
+	$category->name=$this->input->post('name');
+	$category->description=$this->input->post('description');
+	$category->save();
+	redirect('admin/get/category');	
+    }
+    public function update_category($id){	
+	$category = new Category_model();
+	$category->id_category=$this->input->post('id_category');
+	$category->name=$this->input->post('name');
+	$category->description=$this->input->post('description');
+	$category->update();
+	redirect('admin/get/category');
+    }
 }
