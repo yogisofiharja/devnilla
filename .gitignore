@@ -166,7 +166,7 @@ pip-log.txt
 ###codeigniter
 ###############
 
-*/config/database.php
+*/application/config/database.php
 */logs/log-*.php
 */logs/!index.html
 */cache/*
