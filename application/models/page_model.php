@@ -36,7 +36,7 @@ class Page_model extends CI_Model{
         $data=array(
             'section'=>$this->section,
             'title'=>$this->title,
-            'description'=>$this->description
+            'description'=>$this->description,
             'content'=>$this->content
         );
         $this->db->where('id_page',$this->id_page);
