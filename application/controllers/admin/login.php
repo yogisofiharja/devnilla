@@ -6,5 +6,6 @@ class Login extends CI_Controller {
                 $this->load->spark('Twiggy/0.8.5');
                 $this->twiggy->set($data, NULL, FALSE);
                 $this->twiggy->template('login')->display();
+                
 	}	
 }
