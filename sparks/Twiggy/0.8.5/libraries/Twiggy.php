@@ -17,8 +17,10 @@
  */
 
 if(!defined('TWIGGY_ROOT')) define('TWIGGY_ROOT', dirname(__DIR__));
+//if(!defined('TWIGGY_ROOT')) define('TWIGGY_ROOT', dirname(base_url().'sparks/Twiggy/0.8.5));
 
 require_once(TWIGGY_ROOT . '/vendor/Twig/lib/Twig/Autoloader.php');
+//require_once(base_url().'sparks/Twiggy/0.8.5/vendor/Twig/lib/Twig/Autoloader.php');
 Twig_Autoloader::register();
 
 class Twiggy

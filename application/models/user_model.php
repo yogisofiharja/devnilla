@@ -11,9 +11,10 @@ class User_model extends CI_Model{
         $this->db->where('password',
         md5($this->input->post('password')));
         
-        $ambil=$this->db->get('user');
-        if($ambil->num_rows==1){
-            return true;
+        $ambil=$this->db->get('user')->result();
+		$ambil=$ambil[0];		
+        if($ambil){
+            return $ambil;
         }
     }
     function all(){

@@ -3,10 +3,11 @@ class Post extends CI_Controller {
     public function ceklogin()
 	{
 		$query=$this->user_model->ceklogin();
-		if($query){
+		
+		if($query->username==$this->input->post('username')){
 			$session=array(
 			'id_user'=>$query->id_user,
-			'username'=>$this->input->post('username'),
+			'username'=>$query->username,
 			'is_logged_in'=>true);
 			$this->session->set_userdata($session);
 			redirect('admin/get/index');

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.7
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 11, 2013 at 06:46 PM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: Mar 19, 2013 at 12:04 PM
+-- Server version: 5.1.41
+-- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -34,6 +33,11 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`id_category`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `category`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +52,11 @@ CREATE TABLE IF NOT EXISTS `contactus` (
   `date_post` datetime NOT NULL,
   PRIMARY KEY (`id_contact`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `contactus`
+--
+
 
 -- --------------------------------------------------------
 
@@ -65,17 +74,10 @@ CREATE TABLE IF NOT EXISTS `page` (
   PRIMARY KEY (`id_page`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `page_resource`
+-- Dumping data for table `page`
 --
 
-CREATE TABLE IF NOT EXISTS `page_resource` (
-  `id_page_resource` int(11) NOT NULL,
-  `page_id` int(11) NOT NULL,
-  `resource_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -96,6 +98,11 @@ CREATE TABLE IF NOT EXISTS `post` (
   UNIQUE KEY `id_post_2` (`id_post`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `post`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -109,18 +116,10 @@ CREATE TABLE IF NOT EXISTS `post_category` (
   PRIMARY KEY (`id_post_category`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `post_resource`
+-- Dumping data for table `post_category`
 --
 
-CREATE TABLE IF NOT EXISTS `post_resource` (
-  `id_post_resource` int(11) NOT NULL AUTO_INCREMENT,
-  `post_id` int(11) NOT NULL,
-  `resource_id` int(11) NOT NULL,
-  PRIMARY KEY (`id_post_resource`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -141,6 +140,11 @@ CREATE TABLE IF NOT EXISTS `resource` (
   PRIMARY KEY (`id_resource`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `resource`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -153,7 +157,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(200) NOT NULL,
   `full_name` varchar(150) NOT NULL,
   `email` varchar(200) NOT NULL,
-  `user_type_id` int(11) NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
@@ -162,30 +165,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `full_name`, `email`, `user_type_id`, `date_modified`) VALUES
-(1, 'yogi', '938e14c074c45c62eb15cc05a6f36d79', 'Yogi Sofi Harja', 'hardja.ogie@gmail.com', 1, '2013-03-08 20:00:00'),
-(2, 'admin', '84fc02daf5252224f212e6383c243407', 'Admin Nurdin Nasution', 'admin@devnila.com', 1, '2013-03-06 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_type`
---
-
-CREATE TABLE IF NOT EXISTS `user_type` (
-  `id_user_type` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
-  `description` text NOT NULL,
-  `date_modified` datetime NOT NULL,
-  PRIMARY KEY (`id_user_type`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `user_type`
---
-
-INSERT INTO `user_type` (`id_user_type`, `name`, `description`, `date_modified`) VALUES
-(1, 'admin', 'admin', '2013-03-08 20:00:00');
+INSERT INTO `user` (`id_user`, `username`, `password`, `full_name`, `email`, `date_modified`) VALUES
+(1, 'yogi', '938e14c074c45c62eb15cc05a6f36d79', 'Yogi Sofi Harja', 'hardja.ogie@gmail.com', '2013-03-08 20:00:00'),
+(2, 'admin', '84fc02daf5252224f212e6383c243407', 'Admin Nurdin Nasution', 'admin@devnila.com', '2013-03-06 00:00:00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
