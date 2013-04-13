@@ -16,6 +16,8 @@ class Get extends CI_Controller {
         $this->load->spark('Twiggy/0.8.5');
 	$this->twiggy->template('admin_index')->display(); 
     }
+    
+    /* manage user */
     public function user(){
         $this->load->spark('Twiggy/0.8.5');
         $user=new User_model();
@@ -44,6 +46,8 @@ class Get extends CI_Controller {
         $user->delete($id);
         redirect('admin/get/user');
     }
+    
+    /* manage category */
     function category(){
         $this->load->spark('Twiggy/0.8.5');
         $category=new Category_model();
@@ -72,6 +76,11 @@ class Get extends CI_Controller {
         $category->delete($id);
         redirect('admin/get/category');
     }
+    
+    /* manage page */
+    /* manage resource */
+    /* manage post */
+    /* manage contact_us */
     
     
 }

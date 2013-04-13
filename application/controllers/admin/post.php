@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Post extends CI_Controller {
+    
+    /* manage user */
     public function ceklogin()
 	{
 		$query=$this->user_model->ceklogin();
@@ -39,6 +41,8 @@ class Post extends CI_Controller {
 	$user->update();
 	redirect('admin/get/user');
     }
+    
+    /* manage category */
     public function tambah_category(){
 	$category = new Category_model();
 	$category->name=$this->input->post('name');
@@ -54,4 +58,12 @@ class Post extends CI_Controller {
 	$category->update();
 	redirect('admin/get/category');
     }
+    
+    
+    /* manage page */
+    /* manage resource */
+    /* manage post */
+    /* manage contact_us */
+    
+    
 }
