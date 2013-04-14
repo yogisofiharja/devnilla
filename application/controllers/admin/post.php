@@ -63,6 +63,33 @@ class Post extends CI_Controller {
     /* manage page */
     /* manage resource */
     /* manage post */
+    public function tambah_posts(){
+        $posts = new Posts_model();
+        $posts_category = new Post_category_model();
+        
+        $temp_category = $this->input->post('select-category');
+        
+        
+        
+        $posts->title=$this->input->post('title');
+        $posts->note = $this->input->post('note');
+        $posts->user_id = $this->session->userdata('id_user');
+        $posts->status = $this->input->post('show');
+        
+        $today = date('Y-m-d H:i:s');
+        $posts->date_post = $today;
+        
+        $post_id = $posts->save();
+        
+        foreach ($temp_category as $category){
+            $posts_category->category_id = $category;
+            $posts_category->post_id = $post_id;
+            $posts_category->save();
+        }
+        
+        redirect('admin/get/posts');
+    }
+    
     /* manage contact_us */
     
     

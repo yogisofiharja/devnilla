@@ -10,6 +10,7 @@ class Page_model extends CI_Model{
         $q=$this->db->get('page');
         return $q->result();
     }
+    
     function get_by($key, $value){
         $q=$this->db->get_where('page', array($key=>$value));
         $data=$q->result();
@@ -20,6 +21,7 @@ class Page_model extends CI_Model{
         $this->content=$data[0]->content;
         return $this;        
     }
+    
     function save(){
         $data=array(
             'section'=> $this->section,

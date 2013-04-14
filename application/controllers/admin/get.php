@@ -79,7 +79,72 @@ class Get extends CI_Controller {
     
     /* manage page */
     /* manage resource */
+    
     /* manage post */
+    function posts(){
+        $this->load->spark('Twiggy/0.8.5');
+        $posts=new Posts_model();
+        $posts_category = new Posts_category_model();
+        $data=array();
+        $list_posts = array();
+        $list_posts_category = array();
+        
+        $temp_posts = $posts->all_by('user_id', $this->session->userdata('id_user'));
+        
+        $i = 0;
+        foreach($temp_posts as $posts){
+            $posts->category = $posts_category->all_by_posts($posts->id_post)->result();
+            $list_posts[$i] = $posts;
+            $i++;
+        }
+        
+        $data['list_posts']= $list_posts;
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('list_posts')->display();
+    }
+    
+    function tambah_posts($stat=NULL){
+        $this->load->spark('Twiggy/0.8.5');
+        
+        $category = new Category_model();
+        
+        $data=array();
+        
+        $data['stat']=$stat;
+        $data['list_category'] = $category->all();
+        
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('tambah_posts')->display();
+    }
+    
+    function update_posts($id){
+        $this->load->spark('Twiggy/0.8.5');
+        $posts=new Posts_model();
+        $category = new Category_model();
+        
+        $posts_category = new Posts_category_model();
+        $data=array();
+        
+        $temp_posts = $posts->get_by('id_post', $id);
+        $posts_category = $posts_category->all_by_posts($temp_posts->id_post)->result();
+        
+    
+        
+        echo "<pre>";
+        print_r($temp_posts->category);
+        echo "</pre>";
+        
+        $data['posts']= $temp_posts;
+        $this->twiggy->set($data, NULL, FALSE);
+        //$this->twiggy->template('update_posts')->display();
+    }
+    
+    function delete_posts($id){
+        $posts = new posts_model();
+        $posts->delete($id);
+        redirect('admin/get/posts');
+    }
+    
     /* manage contact_us */
     
     

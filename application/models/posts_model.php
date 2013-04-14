@@ -1,5 +1,5 @@
 <?php
-class Post_model extends CI_Model{
+class Posts_model extends CI_Model{
     var $id_post='';
     var $user_id='';
     var $title='';
@@ -10,6 +10,12 @@ class Post_model extends CI_Model{
     
     function all(){
         $q=$this->db->get('post');
+        return $q->result();
+    }
+    
+    function all_by($key, $value){
+        $this->db->order_by('date_post', 'desc');
+        $q=$this->db->get_where('post', array($key=>$value));
         return $q->result();
     }
     
@@ -37,7 +43,9 @@ class Post_model extends CI_Model{
             'date_updated'=> $this->date_post,
             
         );
+        
         $this->db->insert('post', $data);
+        return $this->db->insert_id();
     }
     
     function delete($id){

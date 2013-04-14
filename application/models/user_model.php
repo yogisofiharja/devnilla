@@ -12,15 +12,17 @@ class User_model extends CI_Model{
         md5($this->input->post('password')));
         
         $ambil=$this->db->get('user')->result();
-		$ambil=$ambil[0];		
+        $ambil=$ambil[0];		
         if($ambil){
             return $ambil;
         }
     }
+    
     function all(){
         $q=$this->db->get('user');
         return $q->result();
     }
+    
     function get_by($key, $value){
         $q=$this->db->get_where('user', array($key=>$value));
         $data=$q->result();
@@ -31,6 +33,7 @@ class User_model extends CI_Model{
         $this->full_name=$data[0]->full_name;
         return $this;        
     }
+    
     function save(){
         $data=array(
             'username'=> $this->username,
@@ -40,9 +43,11 @@ class User_model extends CI_Model{
         );
         $this->db->insert('user', $data);
     }
+    
     function delete($id){
         $this->db->delete('user',array('id_user'=>$id));
     }
+    
     function update(){
         $data=array(
             'username'=>$this->username,

@@ -1,5 +1,5 @@
 <?php
-class Post_category_model extends CI_Model{
+class Posts_category_model extends CI_Model{
     var $id_post_category='';
     var $post_id='';
     var $category_id='';
@@ -9,9 +9,22 @@ class Post_category_model extends CI_Model{
         return $q->result();
     }
     
+    function all_by_posts($value){
+        $this->db->select('*');
+        $this->db->from('post_category as pc');
+        $this->db->join('category as cat', 'cat.id_category = pc.category_id');
+        $this->db->where('pc.post_id', $value);
+        
+        
+        return $this->db->get();
+    }
+    
+    
     function get_by($key, $value){
         $q=$this->db->get_where('post_category', array($key=>$value));
+        
         $data=$q->result();
+       
         $this->id_post_category=$data[0]->id_post_category;
         $this->post_id=$data[0]->post_id;
         $this->category_id=$data[0]->category_id;
