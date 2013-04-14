@@ -127,16 +127,12 @@ class Get extends CI_Controller {
         
         $temp_posts = $posts->get_by('id_post', $id);
         $posts_category = $posts_category->all_by_posts($temp_posts->id_post)->result();
+
         
-    
-        
-        echo "<pre>";
-        print_r($temp_posts->category);
-        echo "</pre>";
         
         $data['posts']= $temp_posts;
         $this->twiggy->set($data, NULL, FALSE);
-        //$this->twiggy->template('update_posts')->display();
+        $this->twiggy->template('update_posts')->display();
     }
     
     function delete_posts($id){
