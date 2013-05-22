@@ -19,7 +19,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-			$this->load->spark('Twiggy/0.8.5');			
+			$this->load->spark('Twiggy/0.8.5');
+			$page=new Page_model();
+			$data=array();
+			$data['list_page']=$page->all();
+			$this->twiggy->set($data, NULL, FALSE);
 			$this->twiggy->template('home')->display();
 	}
 }
