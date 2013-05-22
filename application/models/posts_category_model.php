@@ -44,6 +44,8 @@ class Posts_category_model extends CI_Model{
     }
     
     function delete_category($id){
+        //$this->db->delete('post_category', array('category_id'=>$id));
+        //$this->db->delete('post_category', array('category_id'=>$id));
         $this->db->delete('post_category', array('category_id'=>$id));
     }
     
