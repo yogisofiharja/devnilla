@@ -74,6 +74,8 @@ class Get extends CI_Controller {
     function delete_category($id){
         $category = new Category_model();
         $category->delete($id);
+        $posts_category = new Posts_category_model();
+        $posts_category->delete_category($id);
         redirect('admin/get/category');
     }
     
@@ -155,6 +157,8 @@ class Get extends CI_Controller {
     function delete_posts($id){
         $posts = new posts_model();
         $posts->delete($id);
+        $posts_category = new Posts_category_model();
+        $posts_category->delete_posts($id);
         redirect('admin/get/posts');
     }
     

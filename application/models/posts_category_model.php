@@ -38,9 +38,19 @@ class Posts_category_model extends CI_Model{
         );
         $this->db->insert('post_category', $data);
     }
+    
     function delete($id){
         $this->db->delete('post_category', array('id_post_category'=>$id));
     }
+    
+    function delete_category($id){
+        $this->db->delete('post_category', array('category_id'=>$id));
+    }
+    
+    function delete_posts($id){
+        $this->db->delete('post_category', array('post_id'=>$id));
+    }
+    
     function update(){
         $data=array(
             'post_id'=>$this->post_id,
