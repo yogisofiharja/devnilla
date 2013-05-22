@@ -61,6 +61,23 @@ class Post extends CI_Controller {
     
     
     /* manage page */
+	 public function tambah_page(){
+	$page = new Page_model();
+	$page->title=$this->input->post('title');
+	$page->description=$this->input->post('description');
+	$page->content=$this->input->post('content');
+	$page->save();
+	redirect('admin/get/page');	
+    }
+    public function update_page($id){	
+	$page = new Page_model();
+	$page->id_page=$this->input->post('id_page');
+	$page->title=$this->input->post('title');
+	$page->description=$this->input->post('description');
+	$page->content=$this->input->post('content');
+	$page->update();
+	redirect('admin/get/page');
+    }
     /* manage resource */
     /* manage post */
     public function tambah_posts(){

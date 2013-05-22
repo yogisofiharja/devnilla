@@ -103,7 +103,7 @@ class Get extends CI_Controller {
         $this->twiggy->set($data, NULL, FALSE);
         $this->twiggy->template('update_page')->display();
     }
-    function delete_pages($id){
+    function delete_page($id){
         $page = new Page_model();
         $page->delete($id);
         redirect('admin/get/page');
