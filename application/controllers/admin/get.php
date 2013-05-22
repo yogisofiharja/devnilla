@@ -80,6 +80,34 @@ class Get extends CI_Controller {
     }
     
     /* manage page */
+    function page(){
+        $this->load->spark('Twiggy/0.8.5');
+        $page=new Page_model();
+        $data=array();
+        $data['list_page']=$page->all();
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('list_page')->display();
+    }
+    function tambah_page($stat=NULL){
+        $data=array();
+        $data['stat']=$stat;
+        $this->load->spark('Twiggy/0.8.5');
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('tambah_page')->display();
+    }
+    function update_page($id){
+        $page = new Page_model();
+        $data=array();        
+        $data['page']=$page->get_by('id_page', $id);
+        $this->load->spark('Twiggy/0.8.5');
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('update_page')->display();
+    }
+    function delete_pages($id){
+        $page = new Page_model();
+        $page->delete($id);
+        redirect('admin/get/page');
+    }
     /* manage resource */
     
     /* manage post */
