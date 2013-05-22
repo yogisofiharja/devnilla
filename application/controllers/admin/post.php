@@ -63,6 +63,7 @@ class Post extends CI_Controller {
     /* manage page */
 	 public function tambah_page(){
 	$page = new Page_model();
+	$page->section=$this->input->post('section');
 	$page->title=$this->input->post('title');
 	$page->description=$this->input->post('description');
 	$page->content=$this->input->post('content');
@@ -72,6 +73,7 @@ class Post extends CI_Controller {
     public function update_page($id){	
 	$page = new Page_model();
 	$page->id_page=$this->input->post('id_page');
+	$page->section=$this->input->post('section');
 	$page->title=$this->input->post('title');
 	$page->description=$this->input->post('description');
 	$page->content=$this->input->post('content');

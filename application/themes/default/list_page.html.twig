@@ -28,6 +28,7 @@
                             <table class="table table-striped table-bordered bootstrap-datatable datatable">
                               <thead>
                                       <tr>
+                                              <th>Section</th>
                                               <th>Title</th>
                                               <th>Description</th>
                                               <th>Content</th>
@@ -37,6 +38,7 @@
                               <tbody>
                                     {% for page in list_page %}
                                     <tr>
+                                            <td>{{ page.section}}</td>
                                             <td>{{ page.title}}</td>
                                             <td>{{ page.description}}</td>                                            
                                             <td>{{ page.content}}</td>                                            
