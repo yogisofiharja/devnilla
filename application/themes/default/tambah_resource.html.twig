@@ -1,0 +1,65 @@
+{% extends '_layouts/admin_base.html.twig' %}
+{% block content %}
+<div>
+            <hr>
+            <ul class="breadcrumb">
+                    <li>
+                            <a href="{{ base_url() }}admin">Home</a> <span class="divider">/</span>
+                    </li>
+                    <li>
+                            <a href="{{ base_url() }}admin/get/resource">Resource</a>
+                    </li>
+            </ul>
+            <hr>
+    </div>
+
+
+<div class="row-fluid sortable">
+        <div class="box span12">
+                <div class="box-header" data-original-title>
+                        <h2><i class="icon-edit"></i><span class="break"></span>Add a New Resource</h2>                        
+                </div>
+                <div class="box-content">
+                        <form class="form-horizontal" action="{{ base_url()}}admin/post/tambah_resource" method="POST" enctype="multipart/form-data">
+                          <fieldset>
+				<div class="control-group">
+					<label class="control-label" for="resource">Choose File</label>
+					<div class="controls">
+					     <input class="input-file uniform_on" id="resource" name="resource" type="file">
+					</div>
+				</div>
+                                <div class="control-group">
+                                  <label class="control-label" for="title">Title</label>
+                                    <div class="controls">
+                                      <input class="input-xlarge focused" name="title" type="text">
+                                      <input type="hidden" name="id_user" >
+                                    </div>
+                                </div>				
+                                <div class="control-group">
+                                  <label class="control-label" for="textarea2">Description</label>
+					<div class="controls">
+					      <textarea class="cleditor" id="description" name="description" rows="4" ></textarea>
+					</div>				  
+                                </div>
+				<div class="control-group">
+                                  <label class="control-label" for="type">Type</label>
+					<div class="controls">
+					      <select class="cleditor" id="type" name="type" >
+						<option value="1">Image</option>
+						<option value="2">File</option>
+					      </select>
+					</div>				  
+                                </div>
+                                <div class="form-actions">
+                                  <button type="submit" class="btn btn-primary">Save</button>
+                                  <a class="btn" href="{{base_url()}}admin/get/resource/">Cancel</a>
+                                </div>
+                          </fieldset>
+                        </form>			
+                </div>
+        </div><!--/span-->
+
+</div><!--/row-->
+
+			
+{% endblock %}

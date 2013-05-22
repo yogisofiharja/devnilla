@@ -81,6 +81,40 @@ class Post extends CI_Controller {
 	redirect('admin/get/page');
     }
     /* manage resource */
+    public function tambah_resource(){
+	$resource=new Resource_model();
+	$resource->user_id=$this->session->userdata('id_user');	
+	$resource->title = $this->input->post('title');
+	$resource->description = $this->input->post('description');
+	$resource->type = $this->input->post('type');
+	$resource->date_uploaded = date("Y-m-d H:i:s", time());
+	
+	$config['upload_path'] = './asset/resource/';
+	$config['allowed_types'] = '*';
+	$config['max_size']='50000';
+	
+	$this->load->library('upload', $config);
+	if($this->upload->do_upload('resource')){
+	    $filename=array();
+	    $filename=$this->upload->data();
+	    $resource->file_location= 'asset/resource/'.$filename['file_name'];
+	    $resource->save();
+	    redirect('admin/get/resource');
+	} else {
+	    $error = array('error' => $this->upload->display_errors());
+	    echo $error['error'];
+	}
+    }
+    
+    public function update_resource($id){
+	$resource = new Resource_model();
+	$resource->id_resource=$this->input->post('id_resource');
+	$resource->title=$this->input->post('title');
+	$resource->description=$this->input->post('description');
+	$resource->type=$this->input->post('type');
+	$resource->update();
+	redirect('admin/get/resource');
+    }
     /* manage post */
     public function tambah_posts(){
         $posts = new Posts_model();

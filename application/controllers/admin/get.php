@@ -109,7 +109,40 @@ class Get extends CI_Controller {
         redirect('admin/get/page');
     }
     /* manage resource */
+    function resource(){
+        $this->load->spark('Twiggy/0.8.5');
+        $resource = new Resource_model();
+        $data=array();
+        $list_resource=$resource->all();
+        $data['list_resource']= $list_resource;
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('list_resource')->display();
+    }
     
+    function tambah_resource($stat=NULL){
+        $this->load->spark('Twiggy/0.8.5');
+        
+        $this->twiggy->template('tambah_resource')->display();
+    }
+    
+    function update_resource($id){
+        $this->load->spark('Twiggy/0.8.5');
+        $resource=new Resource_model();
+        
+        $data=array();
+        
+        $data['resource']= $resource->get_by('id_resource', $id);
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('update_resource')->display();
+    }
+    
+    function delete_resource($id){
+        $resource = new Resource_model();
+        $file_location=$resource->get_by('id_resource', $id);
+        exec("rm /var/www/htdocs/devnilla/".$file_location->file_location);
+        $resource->delete($id);
+        redirect('admin/get/resource');
+    }
     /* manage post */
     function posts(){
         $this->load->spark('Twiggy/0.8.5');
