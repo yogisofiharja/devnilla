@@ -65,7 +65,7 @@ class Post extends CI_Controller {
     /* manage post */
     public function tambah_posts(){
         $posts = new Posts_model();
-        $posts_category = new Post_category_model();
+        $posts_category = new Posts_category_model();
         
         $temp_category = $this->input->post('select-category');
         
