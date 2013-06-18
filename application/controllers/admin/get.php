@@ -14,7 +14,7 @@ class Get extends CI_Controller {
     }
     public function index(){
         $this->load->spark('Twiggy/0.8.5');
-	$this->twiggy->template('admin_index')->display(); 
+		$this->twiggy->template('admin_index')->display(); 
     }
     
     /* manage user */

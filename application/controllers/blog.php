@@ -19,13 +19,49 @@ class Blog extends CI_Controller {
 	 */
 	public function index()
 	{
-			$this->load->spark('Twiggy/0.8.5');
-			//$page=new Page_model();
-			//$data=array();
-			//$data['list_page']=$page->all();
-			//$this->twiggy->set($data, NULL, FALSE);
-			$this->twiggy->template('blog')->display();
+		$this->load->spark('Twiggy/0.8.5');
+		/*$posts = new Posts_model();
+		$posts_category = new Posts_category_model();
+		$data = array();
+		$list_posts = array();
+		$list_posts_category = array();
+		
+		$temp_posts = $posts->all_by('user_id', $this->session->userdata('id_user'));
+		
+		$i = 0;
+		foreach($temp_posts as $posts){
+			$posts->category = $posts_category->all_by_posts_except_portofolio()->result();
+			$list_posts[$i] = $posts;
+			$i++;
+		}
+		
+		$data['list_posts']= $list_posts;
+		$this->twiggy->set($data, NULL, FALSE);*/
+		
+		$posts=new Posts_model();
+        $posts_category = new Posts_category_model();
+        $data=array();
+        $list_posts = array();
+        $list_posts_category = array();
+        
+        //$temp_posts = $posts->all_by('user_id', $this->session->userdata('id_user'));
+        $temp_posts = $posts->all();
+        
+        $i = 0;
+        foreach($temp_posts as $posts){
+            $posts->category = $posts_category->all_by_posts_except_portofolio()->result();
+            $list_posts[$i] = $posts;
+            $i++;
+        }
+        
+        $data['list_posts']= $list_posts;
+        $this->twiggy->set($data, NULL, FALSE);
+		
+		$this->twiggy->template('blog')->display();
 	}
+	
+	
+	
 }
 
 /* End of file welcome.php */
