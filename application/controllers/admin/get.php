@@ -205,14 +205,14 @@ class Get extends CI_Controller {
             $i++;
         }
         
-        echo "<pre>";
-        print_r($list_category);
-        echo "</pre>";
+        //echo "<pre>";
+        //print_r($list_category);
+        //echo "</pre>";
         
         
         $data['posts']= $temp_posts;
         $this->twiggy->set($data, NULL, FALSE);
-        //$this->twiggy->template('update_posts')->display();
+        $this->twiggy->template('update_posts')->display();
     }
     
     function delete_posts($id){
