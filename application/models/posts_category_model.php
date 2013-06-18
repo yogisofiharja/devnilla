@@ -15,10 +15,10 @@ class Posts_category_model extends CI_Model{
         $this->db->join('category as cat', 'cat.id_category = pc.category_id');
         $this->db->where('pc.post_id', $value);
         
-        
         return $this->db->get();
     }
     
+   
     
     function get_by($key, $value){
         $q=$this->db->get_where('post_category', array($key=>$value));

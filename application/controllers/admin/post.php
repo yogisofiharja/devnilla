@@ -80,6 +80,36 @@ class Post extends CI_Controller {
 	$page->update();
 	redirect('admin/get/page');
     }
+    
+    public function update_post(){	
+	$posts = new Posts_model();
+	$posts->id_post=$this->input->post('id_post');
+	$posts->title=$this->input->post('title');
+	$posts->note=$this->input->post('note');
+	$posts->status=$this->input->post('show');
+	$posts->update();
+        
+        $posts_category = new Posts_category_model();
+        
+        // hapus dulu
+        $old_posts_category = $posts_category->all_by_posts($posts->id_post)->result();
+        foreach($old_posts_category as $category){
+            $posts_category->delete($category->id_post_category);
+        }
+        
+        
+        // simpan lagi
+        $new_posts_category = $this->input->post('select-category');
+        foreach ($new_posts_category as $category){
+            $posts_category->category_id = $category;
+            $posts_category->post_id = $this->input->post('id_post');
+            $posts_category->save();
+        }
+        
+        //echo $this->input->post('show');
+	redirect('admin/get/posts');
+    }
+    
     /* manage resource */
     public function tambah_resource(){
 	$resource=new Resource_model();
