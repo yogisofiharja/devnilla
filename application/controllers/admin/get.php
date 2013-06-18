@@ -191,25 +191,36 @@ class Get extends CI_Controller {
         $temp_posts = $posts->get_by('id_post', $id);
         $posts_category = $posts_category->all_by_posts($temp_posts->id_post)->result();
         $temp_category = $category->all();
-        
         $list_category = array();
+       
+        
+        
         $i = 0;
         $j = 0;
         $count_posts_category = count($posts_category);
         foreach($temp_category as $category){
-            
             $category->selected = 0;
-           
+            $temp_pc = $posts_category;
+            foreach($temp_pc as $pc){
+                if ($category->name == $pc->name){
+                    $category->selected = 1;
+                }
+            }
+            
             
             $list_category[$i] = $category;
             $i++;
         }
         
-        //echo "<pre>";
-        //print_r($list_category);
-        //echo "</pre>";
+        /*
+        echo "<pre>";
+        print_r($posts_category);
         
+        print_r($list_category);
+        echo "</pre>";
+        */
         
+        $temp_posts->list_category = $list_category;
         $data['posts']= $temp_posts;
         $this->twiggy->set($data, NULL, FALSE);
         $this->twiggy->template('update_posts')->display();

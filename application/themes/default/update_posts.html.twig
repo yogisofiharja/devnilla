@@ -17,10 +17,10 @@
 <div class="row-fluid sortable">
         <div class="box span12">
                 <div class="box-header" data-original-title>
-                        <h2><i class="icon-edit"></i><span class="break"></span>Add a New Posts</h2>                        
+                        <h2><i class="icon-edit"></i><span class="break"></span>Update A Posts</h2>                        
                 </div>
                 <div class="box-content">
-                        <form class="form-horizontal" action="{{ base_url()}}admin/post/tambah_posts" method="POST">
+                        <form class="form-horizontal" action="{{ base_url()}}admin/post/update_post" method="POST">
                           <fieldset>
                                 <div class="control-group">
                                   <label class="control-label" for="input-title">Title</label>
@@ -34,20 +34,21 @@
                                     <div class="controls">
                                         <select id="select-category" name="select-category[]" multiple data-rel="chosen">
                                             
-                                            {% for category in posts.category %}
+                                            {% for category in posts.list_category %}
                                             
+                                            {% if category.selected == 1 %}
                                             <option selected value='{{ category.id_category }}'>{{category.name}}</option>
                                             
+                                            {% elseif category.selected == 0 %}
+                                            
+                                            <option value='{{ category.id_category }}'>{{category.name}}</option>
+                                            
+                                            {% endif %}
+                                            
                                             {% endfor %}
                                             
-                                            {% for not_category in posts.not_chosen_category %}
                                             
-                                            <option value='{{ not_category.id_category }}'>{{not_category.name}}</option>
-                                            
-                                            {% endfor %}
-                                            
-                                            
-                                            
+                                          
                                             
                                         </select>
                                     </div>
@@ -59,17 +60,33 @@
 					</div>				  
                                 </div> 
                                 <div class="control-group">
+                                    
                                     <label class="control-label">Show this post</label>
                                     <div class="controls">
-                                        <label class="radio">
-                                            <input type="radio" name="show" id="radio-show-1" value="1" checked="">
-                                            Show
+                                        
+                                        {%if posts.status == 1 %}
+                                        <label class="radio">    
+                                            <input type="radio" name="show" id="radio-show-1" value="1" checked=""> show
                                         </label>
                                         <div style="clear:both"></div>
                                         <label class="radio">
-                                            <input type="radio" name="show" id="radio-show-1" value="0">
-                                            Hide
+                                            <input type="radio" name="show" id="radio-show-1" value="0" > hide
+                                        </label
+                                        {%elseif posts.status == 0 %}
+                                        <label class="radio">    
+                                            <input type="radio" name="show" id="radio-show-1" value="1"> show
                                         </label>
+                                        <div style="clear:both"></div>
+                                        <label class="radio">
+                                            <input type="radio" name="show" id="radio-show-1" value="0"  checked="" > hide
+                                        </label
+                                        {%endif%}
+                                           
+                                       
+                                    </div>
+                                    <div class="controls">
+                                      <input name="id_post" type="hidden" value="{{ posts.id_post}}">
+                                     
                                     </div>
                                 </div>
                                  
