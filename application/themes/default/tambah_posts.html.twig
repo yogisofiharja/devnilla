@@ -20,7 +20,7 @@
                         <h2><i class="icon-edit"></i><span class="break"></span>Add a New Posts</h2>                        
                 </div>
                 <div class="box-content">
-                        <form class="form-horizontal" action="{{ base_url()}}admin/post/tambah_posts" method="POST">
+                        <form class="form-horizontal" action="{{ base_url()}}admin/post/tambah_posts" method="POST" enctype="multipart/form-data">
                           <fieldset>
                                 <div class="control-group">
                                   <label class="control-label" for="input-title">Title</label>
@@ -49,6 +49,12 @@
 					      <textarea class="cleditor" id="textarea-note" name="note" rows="4" ></textarea>
 					</div>				  
                                 </div> 
+                                <div class="control-group">
+					<label class="control-label" for="resource">Thumbnail Picture</label>
+					<div class="controls">
+					     <input class="input-file uniform_on" id="resource" name="resource" type="file">
+					</div>
+				</div>   
                                 <div class="control-group">
                                     <label class="control-label">Show this post</label>
                                     <div class="controls">

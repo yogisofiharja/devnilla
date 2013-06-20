@@ -56,7 +56,8 @@ class Posts_model extends CI_Model{
         $data=array(
             'title'=> $this->title,
             'note'=> $this->note,
-            'status'=> $this->status
+            'status'=> $this->status,
+            'thumbnail' => $this->thumbnail
         );
         $this->db->where('id_post', $this->id_post);
         $this->db->update('post', $data);

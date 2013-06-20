@@ -152,8 +152,6 @@ class Post extends CI_Controller {
         
         $temp_category = $this->input->post('select-category');
         
-        
-        
         $posts->title=$this->input->post('title');
         $posts->note = $this->input->post('note');
         $posts->user_id = $this->session->userdata('id_user');
@@ -170,7 +168,33 @@ class Post extends CI_Controller {
             $posts_category->save();
         }
         
-        redirect('admin/get/posts');
+        $config['upload_path'] = './asset/resource/';
+	$config['allowed_types'] = '*';
+	$config['max_size']='50000';
+        
+        $resource=new Resource_model();
+        
+        $this->load->library('upload', $config);
+	if($this->upload->do_upload('resource')){
+	    $filename=array();
+	    $filename=$this->upload->data();
+            
+            $posts->id_post=$post_id;
+            $posts->thumbnail='asset/resource/'.$filename['file_name'];
+            $posts->update();
+            
+            $resource->user_id=$this->session->userdata('id_user');	
+	    $resource->file_location= 'asset/resource/'.$filename['file_name'];
+            $resource->date_uploaded = date("Y-m-d H:i:s", time());
+            $resource->type = 1;
+	    $resource->save();
+	    redirect('admin/get/posts');
+	} else {
+	    $error = array('error' => $this->upload->display_errors());
+	    echo $error['error'];
+	}
+        
+        //redirect('admin/get/posts');
     }
     
     /* manage contact_us */
