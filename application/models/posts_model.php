@@ -18,6 +18,20 @@ class Posts_model extends CI_Model{
         $q=$this->db->get_where('post', array($key=>$value));
         return $q->result();
     }
+	
+	function all_by_posts_except_portofolio(){
+		$sql = "select distinct p.id_post, p.user_id, p.title, p.note, p.status, p.date_post, p.date_updated from post p, post_category pc where p.id_post = pc.post_id and pc.post_id not in (select pc.post_id from post_category pc where pc.category_id = 1 )";
+		$q = $this->db->query($sql);
+        
+		return $q->result();
+    }
+	
+	function all_portofolio(){
+		$sql = "select distinct p.id_post, p.user_id, p.title, p.note, p.status, p.date_post, p.date_updated from post p, post_category pc where p.id_post = pc.post_id and pc.post_id in (select pc.post_id from post_category pc where pc.category_id = 1 )";
+		$q = $this->db->query($sql);
+        
+		return $q->result();
+    }
     
     function get_by($key, $value){
         $q=$this->db->get_where('post', array($key=>$value));

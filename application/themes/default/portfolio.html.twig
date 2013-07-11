@@ -5,19 +5,22 @@
 </div>
 <h1 id="folio-headline">Portfolio</h1>
 <!-- bikin looping buat post post yang ada -->
+<div class="row">
+{% for posts in list_posts %}
 <div class="span3">
     <div class="mask2"> <a href="{{ base_url() }}base/img/portfolio-01.jpg" rel="prettyPhoto"><img src="{{ base_url() }}base/img/portfolio-01.jpg" alt=""></a> </div>
     <div class="inside">
         <hgroup>
-            <h2>Diisi Judul</h2>
+            <h2>{{ posts.title}}</h2>
         </hgroup>
         <div class="entry-content">
-            <p>untuk disini, silahkan diisi potongan isi dari blog post.jumlah karakter yang disampaikan harus seragam semua.misal 300.</p>
+            <p>{{ posts.note}}</p>
             <a class="more-link" href="#">Read More</a>
         </div>
     </div>
-</div> 
-          
+</div>
+{% endfor %} 
+</div>          
         
 {% endblock %}
         

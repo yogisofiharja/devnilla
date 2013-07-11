@@ -17,18 +17,6 @@ class Posts_category_model extends CI_Model{
         
         return $this->db->get();
     }
-	
-	function all_by_posts_except_portofolio(){
-        $this->db->select('*');
-        $this->db->from('post_category as pc');
-        $this->db->join('category as cat', 'cat.id_category = pc.category_id');
-        $this->db->where('pc.category_id !=', 1);
-        
-        
-        return $this->db->get();
-    }
-    
-   
     
     function get_by($key, $value){
         $q=$this->db->get_where('post_category', array($key=>$value));

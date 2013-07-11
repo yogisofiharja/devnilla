@@ -19,12 +19,24 @@ class Portfolio extends CI_Controller {
 	 */
 	public function index()
 	{
-			$this->load->spark('Twiggy/0.8.5');
-			//$page=new Page_model();
-			//$data=array();
-			//$data['list_page']=$page->all();
-			//$this->twiggy->set($data, NULL, FALSE);
-			$this->twiggy->template('portfolio')->display();
+		$this->load->spark('Twiggy/0.8.5');
+		$posts=new Posts_model();
+        $posts_category = new Posts_category_model();
+        $data=array();
+        $list_posts = array();
+        $list_posts_category = array();
+        
+        $temp_posts = $posts->all_portofolio();
+        
+        $i = 0;
+        foreach($temp_posts as $posts){
+            $list_posts[$i] = $posts;
+            $i++;
+        }
+        
+        $data['list_posts']= $list_posts;
+        $this->twiggy->set($data, NULL, FALSE);
+		$this->twiggy->template('portfolio')->display();
 	}
 }
 
