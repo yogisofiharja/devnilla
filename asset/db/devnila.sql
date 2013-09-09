@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.2deb1ubuntu1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 18, 2013 at 11:03 PM
--- Server version: 5.1.41
--- PHP Version: 5.3.2-1ubuntu4.14
+-- Generation Time: Sep 09, 2013 at 04:33 
+-- Server version: 5.5.8
+-- PHP Version: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -31,18 +31,18 @@ CREATE TABLE IF NOT EXISTS `category` (
   `description` text NOT NULL,
   `date_post` datetime NOT NULL,
   PRIMARY KEY (`id_category`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id_category`, `name`, `description`, `date_post`) VALUES
-(2, 'Open Source', 'bejo benget mens online<br>', '0000-00-00 00:00:00'),
-(3, 'Oracle Technology', 'heheheheheheh', '0000-00-00 00:00:00'),
-(4, 'Android Apps', 'Android applications ....', '0000-00-00 00:00:00'),
-(5, 'Unity Web Game', 'description .....', '0000-00-00 00:00:00'),
-(6, 'HTML5 Games', 'html .. html ...', '0000-00-00 00:00:00');
+(1, 'Portofolio', 'kategori ini untuk postingan yang mengandung portofolio perusahaan', '0000-00-00 00:00:00'),
+(2, 'Open Source', 'Mengandung unsur open source dan lalala yeyeye', '0000-00-00 00:00:00'),
+(3, 'Event ', 'ini lllaaa yyyy eeeeee', '0000-00-00 00:00:00'),
+(4, 'Pemrograman', 'llllaaaa yeeyeyeyeyeyeyeyeyeye&nbsp;', '0000-00-00 00:00:00'),
+(5, 'Mobile', 'lalalalalal yeyeyeyeyeyeyeyey<span class="Apple-tab-span" style="white-space:pre">		</span>', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -102,20 +102,18 @@ CREATE TABLE IF NOT EXISTS `post` (
   PRIMARY KEY (`id_post`),
   UNIQUE KEY `id_post` (`id_post`),
   UNIQUE KEY `id_post_2` (`id_post`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`id_post`, `user_id`, `title`, `note`, `status`, `date_post`, `date_updated`) VALUES
-(3, 2, 'ini adalah postingan 3', 'test', 1, '2013-04-14 11:58:50', '2013-04-14 11:58:53'),
-(4, 1, 'Belajar open sources', 'test test test ...', 1, '2013-04-14 00:00:00', '2013-04-14 14:58:42'),
-(5, 1, 'Game AndEngine', 'test test test ...', 0, '2013-04-14 14:54:11', '2013-04-14 14:54:11'),
-(23, 0, 'crot gosok bilas', 'ahahahhahahah', 1, '2013-06-18 21:38:36', '2013-06-18 21:38:36'),
-(7, 1, 'Belajar Construct 2', 'hehehhehe', 1, '2013-04-14 15:18:03', '2013-04-14 15:18:03'),
-(15, 1, 'Belajar Linux Ubuntu', 'belajar ubuntu precies pangolin', 1, '2013-04-14 20:48:39', '2013-04-14 20:48:39'),
-(17, 1, 'Harrrr', 'jkjkjkjkj', 1, '2013-04-14 23:22:13', '2013-04-14 23:22:13');
+(1, 1, 'Game Pesawat Terbang', 'ini menggunakan library andengine, perfect tum lores ipsum soladolarodas aoy geboy gedebung enjoy lala yeye , oh apaka', 1, '2013-06-22 08:28:15', '2013-06-23 23:19:57'),
+(2, 1, 'Blackberry 10', 'Perusahaan Research in Motion telah melakukan perombakan total di bagian operating system untuk handset andalan mereka yaitu Blackberry 10. Operating system ini sangat berbeda dengan versi sebelumnya. Memiliki kemampuan yang istimewa dalam interaksi dengan usernya. Berbeda dengan versi sebelumnya yang menggunakan platform java, kini Blackberry 10 mengusung platform dengan bahasa pemrograman C/C++ untuk native developernya.', 1, '2013-06-22 08:31:36', '2013-06-23 23:19:51'),
+(3, 2, 'Lalala Yeyeye', 'Sekarang sudah banyak sekali lowongan pekerjaan untuk orang-orang alay. Perkembangan dunia permusikan di Indonesia menyebabkan orang alay semakin dibutuhkan. Terutama untuk bumbu kemeriahan panggung. Salah satu kemampuan yang harus dimiliki oleh orang alay adalah kemampuannya dalam menyuarakan suara LALALA YEYEYE. Dan akan menjadi nilai jual ketika kemampuannya dalam merubah jati diri nya menjadi kemayu khusus untuk lelaki.', 1, '2013-06-23 18:14:30', '2013-06-23 23:20:13'),
+(4, 1, 'Coba-coba', 'anak muda jaman sekarang sudah senang sekali dengan hal hal yang mengandung coba2. terutama di dalam hal coba2 menjadi anak shaleh. porto folio lorem ipsum laladuks ubaduks kana waduks', 1, '2013-06-19 01:32:46', '2013-06-23 23:24:08'),
+(5, 2, 'Kini Berbeda', 'Semakin hari semakin berbeda. Jaman ini sudah terbalik. Sudah banyak perubahan di dunia dan di maya. lalala yeyeye ulalala ubebebbebe, sekarang juga orang semakin menggila.', 1, '2013-06-23 23:23:09', '2013-06-23 23:23:12');
 
 -- --------------------------------------------------------
 
@@ -128,15 +126,23 @@ CREATE TABLE IF NOT EXISTS `post_category` (
   `post_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id_post_category`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `post_category`
 --
 
 INSERT INTO `post_category` (`id_post_category`, `post_id`, `category_id`) VALUES
-(29, 23, 4),
-(28, 23, 3);
+(2, 1, 1),
+(3, 1, 5),
+(5, 2, 5),
+(19, 5, 5),
+(18, 5, 4),
+(17, 5, 2),
+(20, 4, 1),
+(21, 4, 3),
+(22, 3, 1),
+(23, 3, 4);
 
 -- --------------------------------------------------------
 
@@ -193,13 +199,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `full_name` varchar(250) NOT NULL,
   `email` varchar(200) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `full_name`, `email`) VALUES
-(1, 'ridwanbejo', '8e3fb21d8f166439477bf4af4ae19a19', 'ridwanbejo', 'ridwanbejo@gmail.com'),
-(2, 'ridwanfs', '418232d74ad342473a0d8f1eaa68c3f8', 'ridwanfs', 'ridwanfs@gmail.com'),
-(3, 'ridwan', 'd584c96e6c1ba3ca448426f66e552e8e', 'ridwan ridwan', 'ridwan@gmail.com');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin sok iyey', 'iyey_lalala@gmail.com'),
+(2, 'ulala', '21232f297a57a5a743894a0e4a801fc3', 'Ulala bin Admin', 'ulala_bin_admin@gmail.com');
