@@ -51,7 +51,7 @@ class Blog extends CI_Controller {
         $list_posts = array();
         $list_posts_category = array();
         
-        $temp_posts = $posts->get_portofolio($id);
+        $temp_posts = $posts->get_blog($id);
         
         $i = 0;
         foreach($temp_posts as $posts){

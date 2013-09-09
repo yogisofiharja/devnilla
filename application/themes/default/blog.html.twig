@@ -11,7 +11,9 @@
 <div class="span3">
     <div class="inside">
         <hgroup>
-            <h2>{{ posts.title}}</h2>
+            <h2>
+			<a class="more-link" href="{{ base_url() }}blog/detail/{{ posts.id_post}}">{{ posts.title}}</a>
+			</h2>
         </hgroup>
         <div class="entry-content">
             <p>{{ posts.note}}</p>

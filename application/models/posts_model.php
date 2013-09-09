@@ -26,7 +26,7 @@ class Posts_model extends CI_Model{
 		return $q->result();
     }
 	
-	function get_portofolio($id){
+	function get_blog($id){
 		$sql = "select distinct p.id_post, p.user_id, p.title, p.note, p.status, p.date_post, p.date_updated from post p, post_category pc where p.id_post = ".$id." and pc.post_id not in (select pc.post_id from post_category pc where pc.category_id = 1 )";
 		$q = $this->db->query($sql);
         
