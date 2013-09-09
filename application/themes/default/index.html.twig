@@ -1,1 +1,21 @@
 {% extends _layout %}
+{% block portfolio %}
+
+<!-- ini bikin looping buat portfolio brs1-->
+{% for posts in list_posts %} <!-- for untuk baris1 -->
+<div class="span4">
+  <div class="mask2"> <a href="{{ base_url() }}base/img/portfolio-01.jpg" rel="prettyPhoto"><img src="{{ base_url() }}base/img/portfolio-01.jpg" alt=""></a> </div>
+  <div class="inside">
+    <hgroup>
+      <h2>{{ posts.title}}</h2>
+    </hgroup>
+    <div class="entry-content">
+      <p>{{ posts.note}}</p>
+      <a class="more-link" href="#">view project</a> </div>
+  </div>
+  <!-- /.inside -->
+</div>
+<!-- /.span4 -->
+{% endfor %} <!-- endfor untuk baris1 -->
+
+{% endblock %}
