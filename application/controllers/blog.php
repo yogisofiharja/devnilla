@@ -41,6 +41,48 @@ class Blog extends CI_Controller {
 		$this->twiggy->template('blog')->display();
 	}
 	
+	public function detail($id)
+	{
+		$this->load->spark('Twiggy/0.8.5');
+		// blog detail
+		$posts=new Posts_model();
+        $posts_category = new Posts_category_model();
+        $data=array();
+        $list_posts = array();
+        $list_posts_category = array();
+        
+        $temp_posts = $posts->get_blog($id);
+        
+        $i = 0;
+        foreach($temp_posts as $posts){
+            $list_posts = $posts;
+            $i++;
+        }
+
+        $data['posts']= $list_posts;
+		
+		// all blog
+		
+		$posts2=new Posts_model();
+        $posts_category2 = new Posts_category_model();
+        $list_posts2 = array();
+        $list_posts_category2 = array();
+        
+        $temp_posts2 = $posts2->all_by_posts_except_portofolio();
+        
+        $h = 0;
+        foreach($temp_posts2 as $posts2){
+            $list_posts2[$h] = $posts2;
+            $h++;
+        }
+		
+        $data['list_posts']= $list_posts2;
+		
+        $this->twiggy->set($data, NULL, FALSE);
+		
+		$this->twiggy->template('blog_detail')->display();
+	}
+	
 	
 	
 }
