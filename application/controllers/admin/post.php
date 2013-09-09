@@ -50,6 +50,7 @@ class Post extends CI_Controller {
 	$category->save();
 	redirect('admin/get/category');	
     }
+    
     public function update_category($id){	
 	$category = new Category_model();
 	$category->id_category=$this->input->post('id_category');
@@ -87,14 +88,19 @@ class Post extends CI_Controller {
 	$posts->title=$this->input->post('title');
 	$posts->note=$this->input->post('note');
 	$posts->status=$this->input->post('show');
+        $temp_posts = $posts->get_by('id_post', $posts->id_post);
+        $posts->thumbnail = $temp_posts->thumbnail;
+        
 	$posts->update();
         
         $posts_category = new Posts_category_model();
         
         // hapus dulu
         $old_posts_category = $posts_category->all_by_posts($posts->id_post)->result();
+        
         foreach($old_posts_category as $category){
             $posts_category->delete($category->id_post_category);
+            //echo "bejo";
         }
         
         
@@ -103,6 +109,7 @@ class Post extends CI_Controller {
         foreach ($new_posts_category as $category){
             $posts_category->category_id = $category;
             $posts_category->post_id = $this->input->post('id_post');
+            //echo "bejo";
             $posts_category->save();
         }
         

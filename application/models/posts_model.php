@@ -6,7 +6,7 @@ class Posts_model extends CI_Model{
     var $note='';
     var $status='';
     var $date_post='';
-    
+    var $thumbnail = '';
     
     function all(){
         $q=$this->db->get('post');
@@ -26,12 +26,20 @@ class Posts_model extends CI_Model{
 		return $q->result();
     }
 	
-	function all_portofolio(){
-		$sql = "select distinct p.id_post, p.user_id, p.title, p.note, p.status, p.date_post, p.date_updated from post p, post_category pc where p.id_post = pc.post_id and pc.post_id in (select pc.post_id from post_category pc where pc.category_id = 1 )";
-		$q = $this->db->query($sql);
-        
-		return $q->result();
+    function all_portofolio(){
+            $sql = "select distinct p.id_post, p.user_id, p.title, p.thumbnail, p.note, p.status, p.date_post, p.date_updated from post p, post_category pc where p.id_post = pc.post_id and pc.post_id in (select pc.post_id from post_category pc where pc.category_id = 1 )";
+            $q = $this->db->query($sql);
+
+            return $q->result();
     }
+    
+    function get_portofolio($id){
+            $sql = "select distinct p.id_post, p.user_id, p.title, p.thumbnail,  p.note, p.status, p.date_post, p.date_updated from post p, post_category pc where p.id_post = pc.post_id and pc.post_id in (select pc.post_id from post_category pc where pc.category_id = 1 and pc.post_id = ".$id.")";
+            $q = $this->db->query($sql);
+
+            return $q->result();
+    }
+    
     
     function get_by($key, $value){
         $q=$this->db->get_where('post', array($key=>$value));
@@ -40,6 +48,8 @@ class Posts_model extends CI_Model{
         $this->user_id=$data[0]->user_id;
         $this->title=$data[0]->title;
         $this->note=$data[0]->note;
+        $this->thumbnail=$data[0]->thumbnail;
+        
         $this->status=$data[0]->status;
         $this->date_post=$data[0]->date_post;
         $this->date_updated=$data[0]->date_updated;

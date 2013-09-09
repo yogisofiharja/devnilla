@@ -7,23 +7,20 @@
 <!-- bikin looping buat post post yang ada -->
 <div class="row">
 
-{% for posts in list_posts %}
-
-<div class="span3">
+<div class="span12">
     <div class="mask2"> <a href="{{ base_url(posts.thumbnail) }}" rel="prettyPhoto"><img src="{{ base_url(posts.thumbnail) }}" alt=""></a> </div>
     <div class="inside">
         <hgroup>
             <h2>{{ posts.title}}</h2>
+            <h4>Diterbitkan Tanggal : {{ posts.date_post}}</h4>
         </hgroup>
         <div class="entry-content">
             <p>{{ posts.note}}</p>
-            <a class="more-link" href="{{ base_url() }}portfolio/detail/{{ posts.id_post }}">Read More</a>
+            
         </div>
     </div>
 </div>
 
-
-{% endfor %} 
 </div>          
         
 {% endblock %}
