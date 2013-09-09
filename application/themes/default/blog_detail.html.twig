@@ -1,0 +1,33 @@
+{% extends '_layouts/front.html.twig' %}
+{% block content %}
+<div class="row">
+    <div class="container-fluid">
+		<div class="row-fluid"> 
+			<div class="span10">
+				<div class="inside">
+					<hgroup>
+						<h2>{{ posts.title}}</h2>
+					</hgroup>
+					<div class="entry-content">
+						<p>{{ posts.note}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="span2">
+					<ul class="nav nav-list">
+						<li class="nav-header">
+							Blog
+						</li>
+					{% for post in list_posts %}
+						<li {% if post.id_post in posts.id_post %}class="active"{% endif %}>
+							<a href="{{ base_url() }}blog/detail/{{ post.id_post}}">{{ post.title}}</a>
+						</li>	
+					{% endfor %}  	
+					</ul>
+			</div> 
+		</div>   
+	</div>    
+</div>        
+{% endblock %}
+        
