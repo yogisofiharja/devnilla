@@ -171,3 +171,7 @@ pip-log.txt
 */cache/*
 */cache/!index.html
 */nbproject/*
+
+#file-file yang bersifat local
+config/database.php
+asset/resource/*
