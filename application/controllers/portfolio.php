@@ -31,7 +31,9 @@ class Portfolio extends CI_Controller {
                 $i = 0;
                 foreach($temp_posts as $posts){
                     $list_posts[$i] = $posts;
+                    
                     $i++;
+                   
                 }
 
                 $data['list_posts']= $list_posts;

@@ -5,15 +5,18 @@
 </div>
 <h1 id="folio-headline">Portfolio</h1>
 <!-- bikin looping buat post post yang ada -->
-<div class="row">
 
+
+   
+<div class="row"> 
+<div class="span10">
 {% for posts in list_posts %}
-
-<div class="span3">
+<div class="row">
+<div class="span10">
     <div class="mask2"> <a href="{{ base_url(posts.thumbnail) }}" rel="prettyPhoto"><img src="{{ base_url(posts.thumbnail) }}" alt=""></a> </div>
     <div class="inside">
         <hgroup>
-            <h2>{{ posts.title}}</h2>
+            <h2>{{ posts.title }} {{ posts.enter_row }}</h2>
         </hgroup>
         <div class="entry-content">
             <p>{{ posts.note}}</p>
@@ -21,10 +24,19 @@
         </div>
     </div>
 </div>
-
+</div>   
 
 {% endfor %} 
-</div>          
+</div>
+
+    <div class="span2">
+        ini kategori <br />
+        ini kategori <br />
+        ini kategori <br />
+        ini kategori <br />
+        ini kategori <br />
         
+    </div>
+        </div>
 {% endblock %}
         
