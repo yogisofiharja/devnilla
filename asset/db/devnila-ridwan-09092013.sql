@@ -1,0 +1,1 @@
+ALTER TABLE  `post` ADD  `thumbnail` TEXT NOT NULL AFTER  `status` ;
