@@ -93,7 +93,7 @@ ul, ol {
 body, input, textarea {
 }
 a:link, a:visited {
-	color: #F1505A;
+	color: #333;
 }
 a:hover, a:active {
 	color: #F1505A;

@@ -3,6 +3,8 @@
 class Contactus_model extends CI_Model{
     var $id_contact='';
     var $name='';
+    var $company='';
+    var $website='';
     var $email='';
     var $content='';
     var $date_post='';
@@ -18,6 +20,8 @@ class Contactus_model extends CI_Model{
         $data=$q->result();
         $this->id_contact=$data[0]->id_contact;
         $this->name=$data[0]->name;
+        $this->company=$data[0]->company;
+        $this->website=$data[0]->website;
         $this->content=$data[0]->content;
         $this->date_post = $data[0]->date_post;
         
@@ -26,6 +30,8 @@ class Contactus_model extends CI_Model{
     function save(){
         $data=array(
             'name'=> $this->name,
+            'company'=> $this->company,
+            'website'=> $this->website,
             'email'=> $this->email,
             'content'=> $this->content,
             'date_post'=>$this->date_post
