@@ -27,11 +27,21 @@ class Posts_model extends CI_Model{
     }
 	
 
-    function all_portofolio(){
+    function all_portofolio($limit=array()){
+        
+        if ($limit == NULL) {
             $sql = "select distinct p.id_post, p.user_id, p.title, p.thumbnail, p.note, p.status, p.date_post, p.date_updated from post p, post_category pc where p.id_post = pc.post_id and pc.post_id in (select pc.post_id from post_category pc where pc.category_id = 1 )";
             $q = $this->db->query($sql);
 
             return $q->result();
+        }
+        else {
+            $sql = "select distinct p.id_post, p.user_id, p.title, p.thumbnail, p.note, p.status, p.date_post, p.date_updated from post p, post_category pc where p.id_post = pc.post_id and pc.post_id in (select pc.post_id from post_category pc where pc.category_id = 1 ) LIMIT ".$limit['offset']." , ".$limit['perpage'];
+            $q = $this->db->query($sql);
+
+            return $q->result();
+        }
+            
     }
     
     function get_blog($id){
@@ -90,10 +100,14 @@ class Posts_model extends CI_Model{
             'title'=> $this->title,
             'note'=> $this->note,
             'status'=> $this->status,
-            'thumbnail' => $this->thumbnail
+            'thumbnail' => $this->thumbnail,
         );
+        
+        
         $this->db->where('id_post', $this->id_post);
         $this->db->update('post', $data);
+         
+         
     }
 }
 

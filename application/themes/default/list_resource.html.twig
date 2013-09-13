@@ -30,6 +30,7 @@
                                       <tr>
                                               <th>Title</th>
                                               <th>Description</th>
+                                              <th>Location</th>
                                               <th>Type</th>
 					      <th>Action</th>
                                       </tr>
@@ -39,6 +40,8 @@
                                     <tr>
                                             <td><a href="{{ base_url() }}{{resource.file_location }}">{{ resource.title}}</a></td>
                                             <td>{{ resource.description}}</td>
+                                            <td>{{ base_url() }}{{resource.file_location }}</td>
+                                            
 					    {% if resource.type == 1 %}
 						<td>Image</td>
 					    {% else %}

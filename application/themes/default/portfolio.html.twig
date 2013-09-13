@@ -7,36 +7,32 @@
 <!-- bikin looping buat post post yang ada -->
 
 
-   
-<div class="row"> 
-<div class="span10">
+{{ pager }}
+
 {% for posts in list_posts %}
 <div class="row">
-<div class="span10">
-    <div class="mask2"> <a href="{{ base_url(posts.thumbnail) }}" rel="prettyPhoto"><img src="{{ base_url(posts.thumbnail) }}" alt=""></a> </div>
-    <div class="inside">
-        <hgroup>
-            <h2>{{ posts.title }} {{ posts.enter_row }}</h2>
-        </hgroup>
-        <div class="entry-content">
-            <p>{{ posts.note}}</p>
-            <a class="more-link" href="{{ base_url() }}portfolio/detail/{{ posts.id_post }}">Read More</a>
+    <div class="span3">
+        <div class="mask2"> <a href="{{ base_url(posts.thumbnail) }}" rel="prettyPhoto"><img src="{{ base_url(posts.thumbnail) }}" alt=""></a> </div>
+    </div>
+    <div class="span9">
+        <div class="inside">
+            <hgroup>
+                <h2>{{ posts.title }} </h2>
+                <h4>Diterbitkan tanggal : {{ posts.date_post}}</h4>
+            </hgroup>
+            <div class="entry-content">
+                <p>{{posts.note}}</p>
+                <a class="more-link" href="{{ base_url() }}portfolio/detail/{{ posts.id_post }}">Read More</a>
+            </div>
         </div>
     </div>
-</div>
 </div>   
 
 {% endfor %} 
-</div>
 
-    <div class="span2">
-        ini kategori <br />
-        ini kategori <br />
-        ini kategori <br />
-        ini kategori <br />
-        ini kategori <br />
-        
-    </div>
-        </div>
+{{ pager }}
+
+
+
 {% endblock %}
         

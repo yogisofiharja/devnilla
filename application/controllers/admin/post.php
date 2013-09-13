@@ -84,12 +84,12 @@ class Post extends CI_Controller {
     
     public function update_post(){	
 	$posts = new Posts_model();
-	$posts->id_post=$this->input->post('id_post');
-	$posts->title=$this->input->post('title');
+        $posts->id_post=$this->input->post('id_post');
+	$temp_posts = $posts->get_by('id_post', $posts->id_post);
+        $posts->thumbnail = $temp_posts->thumbnail;
+        $posts->title=$this->input->post('title');
 	$posts->note=$this->input->post('note');
 	$posts->status=$this->input->post('show');
-        $temp_posts = $posts->get_by('id_post', $posts->id_post);
-        $posts->thumbnail = $temp_posts->thumbnail;
         
 	$posts->update();
         
@@ -115,6 +115,7 @@ class Post extends CI_Controller {
         
         //echo $this->input->post('show');
 	redirect('admin/get/posts');
+         
     }
     
     /* manage resource */
