@@ -27,18 +27,21 @@ class Contactus_model extends CI_Model{
         
         return $this;
     }
-    function save(){
-        $data=array(
-            'name'=> $this->name,
-            'company'=> $this->company,
-            'website'=> $this->website,
-            'email'=> $this->email,
-            'content'=> $this->content,
-            'date_post'=>$this->date_post
-        );
+    // function save(){
+    //     $data=array(
+    //         'name'=> $this->name,
+    //         'company'=> $this->company,
+    //         'website'=> $this->website,
+    //         'email'=> $this->email,
+    //         'content'=> $this->content,
+    //         'date_post'=>$this->date_post
+    //     );
+    //     $this->db->insert('contactus', $data);
+    // }
+    function save($data){        
         $this->db->insert('contactus', $data);
     }
-    
+
     function delete($id){
         $this->db->delete('contactus', array('id_contact'=>$id));
     }
