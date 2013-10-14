@@ -1,0 +1,1 @@
+ALTER TABLE  `contactus` ADD  `status` INT( 2 ) NOT NULL AFTER  `date_post` ;
