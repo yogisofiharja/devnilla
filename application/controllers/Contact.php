@@ -28,10 +28,7 @@ class Contact extends CI_Controller {
 		$config['newline']    = "\r\n";
 		$config['mailtype'] = 'html';
 		
-		$emailcontent = "Dear ".$contact->name.".<br/>Thanks for contacting us. We will response your message soon. Please wait for the reply from us.<br/> <br/>
-			Best regards,<br/>
-			Devnila <br/>
-			http://devnila.com";
+		$emailcontent = "Dear ".$contact->name.".<br/>Thanks for contacting us. We will response your message soon. Please wait for the reply from us.<br/> <br/>Best regards,<br/>Devnila <br/>http://devnila.com";
 		$this->email->initialize($config);
 
 		$this->email->to($contact->email);
