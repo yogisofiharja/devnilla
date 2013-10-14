@@ -175,3 +175,4 @@ pip-log.txt
 #file-file yang bersifat local
 config/database.php
 asset/resource/*
+
