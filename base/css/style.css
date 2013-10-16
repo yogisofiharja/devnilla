@@ -650,8 +650,8 @@ section#team .align, section#contact .align {
 	-webkit-box-shadow: none;
 }
 #theme-form input[type=submit]:hover, #theme-form input[type=submit]:active {
-	background: #1fb4da !important;
-	color:#333;
+	background: #333 !important;
+	color:#fff;
 }
 #theme-form textarea {
 	padding-top: 1em;
