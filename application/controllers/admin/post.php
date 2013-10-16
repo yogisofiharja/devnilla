@@ -206,17 +206,6 @@ class Post extends CI_Controller {
     }
     
     /* manage contact_us */
-    public function tambah_contactus(){
-    	
-		$contact = new Contactus_model();
-		$contact->name=$this->input->post('name');
-		$contact->email=$this->input->post('email');
-		$contact->company=$this->input->post('company');
-		$contact->website=$this->input->post('website');
-		$contact->content=$this->input->post('content');		
-		$contact->date_post=date('Y-m-d H:i:s');
-		$contact->save();
-		redirect('');	
-    }
+    
     
 }

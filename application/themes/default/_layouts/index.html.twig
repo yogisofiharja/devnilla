@@ -37,13 +37,60 @@
     <!-- Load LocalScroll -->
     <script type="text/javascript" src="{{ base_url() }}base/js/jquery.localscroll-1.2.7-min.js"></script>
     <!-- prettyPhoto Initialization -->
+    <!-- Loading the javaScript at the end of the page -->
+    <script type="text/javascript" src="{{ base_url() }}base/js/bootstrap.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}base/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}base/js/site.js"></script>
     <script type="text/javascript" charset="utf-8">
-          $(document).ready(function(){
-            $("a[rel^='prettyPhoto']").prettyPhoto();
-          });
-        </script>
+    function kosongkan(){
+      $("#email").val("");
+      $("#content").val("");
+      $("#name").val("");
+      $("#company").val("");
+      $("#website").val("");
+    }
+    $(document).ready(function(){
+      $("a[rel^='prettyPhoto']").prettyPhoto();
+
+      $('#simpan').click(function(e){
+        e.preventDefault();
+        if($("#email").val()==""){
+          $("#email").focus();
+        }else if($("#content").val()==""){
+          $("#content").focus();
+        }else{
+
+          var name = $("#name").val();
+          var email = $("#email").val();
+          var company = $("#company").val();
+          var website = $("#website").val();
+          var content = $("#content").val();
+          $.post("{{ base_url()}}contact/simpan",{
+            name:name,
+            email:email,
+            company:company,
+            website:website,
+            content:content
+          }, function(data){
+            console.log(data);
+            kosongkan();
+            $("#theme-form").before("<div style=\"width:45%;\"class=\"alert alert-success\">"+
+              "<a class=\"close\" data-dismiss=\"alert\" href=\"#\">×</a>"+
+              "<h4 class=\"alert-heading\">Success</h4>"+
+              "Your message has been sent. Wait for our response soon :)"+
+            "</div>");
+            setTimeout(function() {
+              $( ".alert" ).fadeOut(600);
+            }, 3000);
+          }, "json");
+        }
+      });
+  });
+      
+    </script>
     </head>
     <body>
+    
     <!--******************** NAVBAR ********************-->
     <div class="navbar-wrapper">
       <div class="navbar navbar-inverse navbar-fixed-top">
@@ -180,6 +227,7 @@
           <!-- ./span12 -->
         </div>
         <!-- /.row -->
+
       </div>
       <!-- /.container -->
     </section>
@@ -192,10 +240,7 @@
       </div>
       <!-- ./container -->
     </div>
-    <!-- Loading the javaScript at the end of the page -->
-    <script type="text/javascript" src="{{ base_url() }}base/js/bootstrap.js"></script>
-    <script type="text/javascript" src="{{ base_url() }}base/js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="{{ base_url() }}base/js/site.js"></script>
+    
     
     <!--ANALYTICS CODE-->
 	<script type="text/javascript">

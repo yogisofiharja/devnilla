@@ -8,6 +8,7 @@ class Contactus_model extends CI_Model{
     var $email='';
     var $content='';
     var $date_post='';
+    var $status='';
     
    function all(){
         $q=$this->db->get('contactus');
@@ -27,18 +28,11 @@ class Contactus_model extends CI_Model{
         
         return $this;
     }
-    function save(){
-        $data=array(
-            'name'=> $this->name,
-            'company'=> $this->company,
-            'website'=> $this->website,
-            'email'=> $this->email,
-            'content'=> $this->content,
-            'date_post'=>$this->date_post
-        );
+    
+    function save($data){        
         $this->db->insert('contactus', $data);
     }
-    
+
     function delete($id){
         $this->db->delete('contactus', array('id_contact'=>$id));
     }
@@ -48,7 +42,8 @@ class Contactus_model extends CI_Model{
             'name'=> $this->name,
             'email'=> $this->email,
             'content'=> $this->content,
-            'date_post'=>$this->date_post
+            'date_post'=>$this->date_post,
+            'status'=>$this->status
         );
         
         $this->db->where('id_contact', $this->id_contact);

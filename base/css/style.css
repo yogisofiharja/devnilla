@@ -37,18 +37,18 @@ div, article, section, header, footer, nav, li {
 	visibility:hidden; /* For clearing */
 }
 body {
-	background:#f0f0f0;
-	color: #312A1E;
+	background:#ffffff;
+	color: #1fb4da;
 	font-size: 100%;
 	font-family: 'Quattrocento', serif;
 }
 ::-moz-selection {
-background:#f0bf00;
-color:#333;
+background:#1fb4da;
+color:#fff;
 }
 ::selection {
-background:#f0bf00;
-color:#333;
+background:#1fb4da;
+color:#fff;
 }
 /*---------- FORMS ----------*/
 
@@ -92,11 +92,18 @@ ul, ol {
 }
 body, input, textarea {
 }
-a:link, a:visited {
-	color: #333;
+a:link {
+	color: #1fb4da;
 }
-a:hover, a:active {
-	color: #F1505A;
+a:visited {
+	color: #1fb4da;
+}
+a:hover {
+	color: #1fb4da;
+	text-decoration: underline;
+}
+a:active {
+	color: #1fb4da;
 	text-decoration: underline;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -161,7 +168,7 @@ em {
 	font-family: 'Patua One', cursive;
 }
 .more-link:link, .more-link:visited {
-	color: #f0bf00;
+	color: #1fb4da;
 	text-transform: uppercase;
 }
 /* ---------------------------------------------------------------------------------------------------------- 
@@ -211,7 +218,7 @@ em {
 }
 .navbar .brand a:hover {
 	text-decoration: none;
-	color:#f0bf00;
+	color:#1fb4da;
  transition: color .15s linear;
  -webkit-transition: color .15s linear;
  -moz-transition: color .15s linear;
@@ -224,8 +231,8 @@ em {
 }
 .navbar-inverse .navbar-inner {
 	background-repeat: repeat;
-	background-color: #0b333f;
-	border-color: #f0bf00;
+	background-color: #ffffff;
+	border-color: #1fb4da;
 }
 .navbar-wrapper {
 	overflow:hidden;/* No fixed height, will break collapsible nav */
@@ -237,12 +244,13 @@ ul#menu-main > li > a {
 	font-family: 'Patua One', cursive;
 	font-weight: normal;
 	font-size: 1em;
-	color: #fff;
+	color: #333;
 }
 ul#menu-main > li > a:hover {
-	background: #f0bf00;
+	background: #1fb4da;
 	padding: 9px 15px;
 	border-radius: 3px;
+	color:#fff;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 }
@@ -254,7 +262,7 @@ ul#menu-main > li > a:hover {
 ---------------------------------------------------------------------------------------------------------- */
 #headerwrap {
 	width: 100%;
-	background: url(../img/top.jpg) #0b333f no-repeat center center fixed;
+	background: url(../img/top.jpg) #ffffff no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -266,7 +274,7 @@ ul#menu-main > li > a:hover {
 	text-align:center;
 }
 #headerwrap h1 {
-	color: #FFFFFF;
+	color: #fff;
 	font-family: 'Patua One', cursive;
 	font-size: 4em;
 	font-weight: 400;
@@ -281,7 +289,7 @@ ul#menu-main > li > a:hover {
 	text-shadow: 1px 1px 1px #333333;
 }
 #headerwrap h1 span {
-	color:#0070ff;
+	color:#1fb4da;
 }
 #headerwrap input[type=text] {
 	background: rgba(227, 231, 228, 1);
@@ -314,7 +322,7 @@ ul#menu-main > li > a:hover {
 	margin: 0;
 	border: 0;
 	text-transform: none;
-	background: #f0bf00 !important;
+	background: #1fb4da !important;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -347,12 +355,12 @@ section.single-page h1 {
 	font-size: 2.25em; /* 36px */
 }
 #feature {
-	background: url("../img/yellow.png") repeat-x 0 0;
+	/*background: ;*/
 	height: 406px;
 	z-index: 500;
-	box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+	/*box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);*/
 }
 #feature article {
 	text-align: center;
@@ -377,7 +385,7 @@ section.single-page h1 {
 	font-size: 40px;
 	margin-bottom: 0;
 	line-height: 1.35;
-	color: #fff;
+	color: #333;
 }
 /* Portfolio */
 
@@ -453,7 +461,7 @@ section#services .align .sev_icon {
 	text-align:center;
 	margin:10px 0 20px 0;
 	font-size: 0.6em;
-	color:#F0BF00;
+	color:#5097FF;
 }
 section#services .span3 {
 	background:#e9e9e9;
@@ -474,7 +482,7 @@ section#testimonials {
 	height:  647px;
 	background: url("../img/yellow_testimonial.png") repeat-x 0 0;
 	padding: 0;
-	color: #e4e5e2;
+	color: #5097FF;
 	z-index: 500;
 	box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
@@ -545,8 +553,8 @@ article .inside {
 /* Team and Contact */
 
 section#team, section#contact {
-	color: #e4e5e2;
-	background:#312A1E;
+	color: #1fb4da;
+	background:#fff;
 }
 section#team .align, section#contact .align {
 	font-size: 6em;
@@ -554,8 +562,8 @@ section#team .align, section#contact .align {
 }
 #team h1, #contact h1 {
 	font-size: 3em;
-	margin-bottom: 1em;
-	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-top: 0.3em;
 }
 #contact, #team {
 	padding-top: 4.75em;
@@ -633,7 +641,7 @@ section#team .align, section#contact .align {
 	display: block;
 	border: 0;
 	text-transform: none;
-	background: #f0bf00 !important;
+	background: #1fb4da !important;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -642,7 +650,8 @@ section#team .align, section#contact .align {
 	-webkit-box-shadow: none;
 }
 #theme-form input[type=submit]:hover, #theme-form input[type=submit]:active {
-	background: #43413e !important;
+	background: #333 !important;
+	color:#fff;
 }
 #theme-form textarea {
 	padding-top: 1em;
@@ -782,7 +791,7 @@ footer p {
 	display: block;
 	border: 0;
 	text-transform: none;
-	background: #f0bf00 !important;
+	background: #1fb4da !important;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
