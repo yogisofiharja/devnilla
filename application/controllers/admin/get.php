@@ -14,6 +14,12 @@ class Get extends CI_Controller {
     }
     public function index(){
         $this->load->spark('Twiggy/0.8.5');
+        $message = new Contactus_model();
+        $data = array();
+        $data['unread']=$message->get_unread();
+        // print_r($data['unread']);
+        // $data['inbox']=$message->;
+        $this->twiggy->set($data, NULL, FALSE);
 		$this->twiggy->template('admin_index')->display(); 
     }
     

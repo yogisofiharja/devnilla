@@ -8,6 +8,7 @@ class Contactus_model extends CI_Model{
     var $email='';
     var $content='';
     var $date_post='';
+    var $status='';
     
    function all(){
         $q=$this->db->get('contactus');
@@ -27,17 +28,22 @@ class Contactus_model extends CI_Model{
         
         return $this;
     }
-    // function save(){
-    //     $data=array(
-    //         'name'=> $this->name,
-    //         'company'=> $this->company,
-    //         'website'=> $this->website,
-    //         'email'=> $this->email,
-    //         'content'=> $this->content,
-    //         'date_post'=>$this->date_post
-    //     );
-    //     $this->db->insert('contactus', $data);
-    // }
+
+    function get_unread(){
+        // $this->db->select('*','select count(name) as jumlah from contactus where status=0', FALSE);
+        $this->db->where('status', 0);
+        $this->db->from('contactus');
+        return $this->db->get()->result();
+    }
+
+    function get_inbox(){
+
+    }
+
+    function get_outbox(){
+
+    }
+    
     function save($data){        
         $this->db->insert('contactus', $data);
     }
@@ -51,7 +57,8 @@ class Contactus_model extends CI_Model{
             'name'=> $this->name,
             'email'=> $this->email,
             'content'=> $this->content,
-            'date_post'=>$this->date_post
+            'date_post'=>$this->date_post,
+            'status'=>$this->status
         );
         
         $this->db->where('id_contact', $this->id_contact);
