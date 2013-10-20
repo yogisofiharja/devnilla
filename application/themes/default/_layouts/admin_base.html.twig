@@ -34,140 +34,145 @@
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	  <![endif]-->
 
-	<!-- start: Favicon -->
-	<link rel="shortcut icon" href="{{ base_url() }}bootstrap/img/favicon.png">
-	<!-- end: Favicon -->
-		
-		
-		
-</head>
+	  <!-- start: Favicon -->
+	  <link rel="shortcut icon" href="{{ base_url() }}bootstrap/img/favicon.png">
+	  <!-- end: Favicon -->
+	  <script src="{{ base_url() }}bootstrap/js/jquery-1.9.1.min.js"></script>
+	  <script src="{{ base_url() }}bootstrap/js/jquery-migrate-1.0.0.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery-ui-1.10.0.custom.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.ui.touch-punch.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/bootstrap.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/bootstrap-modal.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.cookie.js"></script>	
+	  <script src='{{ base_url() }}bootstrap/js/fullcalendar.min.js'></script>	
+	  <script src='{{ base_url() }}bootstrap/js/jquery.dataTables.min.js'></script>
+	  <script src="{{ base_url() }}bootstrap/js/excanvas.js"></script>
+	  <!--system.js buat aktifitas di local-->
+	  <script src="{{ base_url() }}base/js/system.js"></script>
 
-<body>
+	  <script src="{{ base_url() }}bootstrap/js/jquery.flot.min.js"></script>
+	  <script src="{{ base_url() }}bootstrap/js/jquery.flot.pie.min.js"></script>
+	  <script src="{{ base_url() }}bootstrap/js/jquery.flot.stack.js"></script>
+	  <script src="{{ base_url() }}bootstrap/js/jquery.flot.resize.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.chosen.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.uniform.min.js"></script>		
+	  <script src="{{ base_url() }}bootstrap/js/jquery.cleditor.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.noty.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.elfinder.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.raty.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.iphone.toggle.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.uploadify-3.1.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.gritter.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.imagesloaded.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.masonry.min.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.knob.js"></script>	
+	  <script src="{{ base_url() }}bootstrap/js/jquery.sparkline.min.js"></script>
+	  <script src="{{ base_url() }}bootstrap/js/custom.js"></script>	
+	  
+
+
+	</head>
+
+	<body>
 		<div id="overlay">
-		<ul>
-		  <li class="li1"></li>
-		  <li class="li2"></li>
-		  <li class="li3"></li>
-		  <li class="li4"></li>
-		  <li class="li5"></li>
-		  <li class="li6"></li>
-		</ul>
-	</div>	
-	<!-- start: Header -->
-	<div class="navbar">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="{{ base_url() }}admin"> <img alt="Perfectum Dashboard" src="{{ base_url() }}bootstrap/img/logo20.png" /> <span class="hidden-phone">Perfectum Dashboard</span></a>
-								
-				<!-- start: Header Menu -->
-				<div class="nav-no-collapse header-nav">
-					<ul class="nav pull-right">
-						
-						<!-- start: User Dropdown -->
-						<li class="dropdown">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="icon-user icon-white"></i>
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#"><i class="icon-user"></i> Profile</a></li>
-								<li><a href="{{ base_url() }}admin/logout"><i class="icon-off"></i> Logout</a></li>
-							</ul>
-						</li>
-						<!-- end: User Dropdown -->
-					</ul>
+			<ul>
+				<li class="li1"></li>
+				<li class="li2"></li>
+				<li class="li3"></li>
+				<li class="li4"></li>
+				<li class="li5"></li>
+				<li class="li6"></li>
+			</ul>
+		</div>	
+		<!-- start: Header -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="{{ base_url() }}admin"> <img alt="Perfectum Dashboard" src="{{ base_url() }}bootstrap/img/logo20.png" /> <span class="hidden-phone">Perfectum Dashboard</span></a>
+
+					<!-- start: Header Menu -->
+					<div class="nav-no-collapse header-nav">
+						<ul class="nav pull-right">
+
+							<!-- start: User Dropdown -->
+							<li class="dropdown">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									<i class="icon-user icon-white"></i>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#"><i class="icon-user"></i> Profile</a></li>
+									<li><a href="{{ base_url() }}admin/logout"><i class="icon-off"></i> Logout</a></li>
+								</ul>
+							</li>
+							<!-- end: User Dropdown -->
+						</ul>
+					</div>
+					<!-- end: Header Menu -->
+
 				</div>
-				<!-- end: Header Menu -->
-				
 			</div>
 		</div>
-	</div>
-	<!-- start: Header -->
-	
+		<!-- start: Header -->
+
 		<div class="container-fluid">
-		<div class="row-fluid">
+			<div class="row-fluid">
 				
-			<!-- start: Main Menu -->
-			<div class="span2 main-menu-span">
-				<div class="nav-collapse sidebar-nav">
-					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="{{ base_url() }}admin"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-						<li><a href="{{ base_url() }}admin/get/user"><i class="icon-user icon-white"></i><span class="hidden-tablet"> Users </span></a></li>						
-						<li><a href="{{ base_url() }}admin/get/category"><i class="icon-asterisk icon-white"></i><span class="hidden-tablet"> Categories </span></a></li>
-						<li><a href="{{ base_url() }}admin/get/page"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Pages</span></a></li>
-						<li><a href="{{ base_url() }}admin/get/posts"><i class="icon-list-alt icon-white"></i><span class="hidden-tablet"> Posts</span></a></li>
-						<li><a href="{{ base_url() }}admin/get/resource"><i class="icon-file icon-white"></i><span class="hidden-tablet"> Files </span></a></li>
-						
-					</ul>
-				</div><!--/.well -->
-			</div><!--/span-->
-			<!-- end: Main Menu -->
-			
-			<noscript>
-				<div class="alert alert-block span10">
-					<h4 class="alert-heading">Warning!</h4>
-					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-				</div>
-			</noscript>
-			
-			<div id="content" class="span10">
-			{% block content%}
-                        <!-- start: Content -->
-			
-			
-			<!-- end: Content -->
-			{% endblock %}
-                        </div><!--/#content.span10-->                        		
-                        </div><!--/fluid-row-->		
-		
-		<div class="clearfix"></div>
-		
-		<footer>
-			<p>
-				<span style="text-align:left;float:left">&copy; <a href="http://clabs.co" target="_blank">creativeLabs</a> 2013</span>
-				<span style="text-align:right;float:right">Powered by: <a href="#">Perfectum Dashboard</a></span>
-			</p>
+				<!-- start: Main Menu -->
+				<div class="span2 main-menu-span">
+					<div class="nav-collapse sidebar-nav">
+						<ul class="nav nav-tabs nav-stacked main-menu">
+							<li><a href="{{ base_url() }}admin"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+							<li><a href="{{ base_url() }}admin/get/user"><i class="icon-user icon-white"></i><span class="hidden-tablet"> Users </span></a></li>						
+							<li><a href="{{ base_url() }}admin/get/category"><i class="icon-asterisk icon-white"></i><span class="hidden-tablet"> Categories </span></a></li>
+							<li><a href="{{ base_url() }}admin/get/page"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Pages</span></a></li>
+							<li><a href="{{ base_url() }}admin/get/posts"><i class="icon-list-alt icon-white"></i><span class="hidden-tablet"> Posts</span></a></li>
+							<li><a href="{{ base_url() }}admin/get/resource"><i class="icon-file icon-white"></i><span class="hidden-tablet"> Files </span></a></li>
 
-		</footer>
-				
-	</div><!--/.fluid-container-->
+						</ul>
+					</div><!--/.well -->
+				</div><!--/span-->
+				<!-- end: Main Menu -->
 
-	<!-- start: JavaScript-->
+				<noscript>
+					<div class="alert alert-block span10">
+						<h4 class="alert-heading">Warning!</h4>
+						<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+					</div>
+				</noscript>
 
-	<script src="{{ base_url() }}bootstrap/js/jquery-1.9.1.min.js"></script>
-	<script src="{{ base_url() }}bootstrap/js/jquery-migrate-1.0.0.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery-ui-1.10.0.custom.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.ui.touch-punch.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/bootstrap.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.cookie.js"></script>	
-	<script src='{{ base_url() }}bootstrap/js/fullcalendar.min.js'></script>	
-	<script src='{{ base_url() }}bootstrap/js/jquery.dataTables.min.js'></script>
-	<script src="{{ base_url() }}bootstrap/js/excanvas.js"></script>
-	<script src="{{ base_url() }}bootstrap/js/jquery.flot.min.js"></script>
-	<script src="{{ base_url() }}bootstrap/js/jquery.flot.pie.min.js"></script>
-	<script src="{{ base_url() }}bootstrap/js/jquery.flot.stack.js"></script>
-	<script src="{{ base_url() }}bootstrap/js/jquery.flot.resize.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.chosen.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.uniform.min.js"></script>		
-	<script src="{{ base_url() }}bootstrap/js/jquery.cleditor.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.noty.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.elfinder.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.raty.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.iphone.toggle.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.uploadify-3.1.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.gritter.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.imagesloaded.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.masonry.min.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.knob.js"></script>	
-	<script src="{{ base_url() }}bootstrap/js/jquery.sparkline.min.js"></script>
-	<script src="{{ base_url() }}bootstrap/js/custom.js"></script>	
-	
-</body>
-</html>
+				<div id="content" class="span10">
+					{% block content%}
+					<!-- start: Content -->
+
+
+					<!-- end: Content -->
+					{% endblock %}
+				</div><!--/#content.span10-->                        		
+			</div><!--/fluid-row-->		
+
+			<div class="clearfix"></div>
+
+			<footer>
+				<p>
+					<span style="text-align:left;float:left">&copy; <a href="http://clabs.co" target="_blank">creativeLabs</a> 2013</span>
+					<span style="text-align:right;float:right">Powered by: <a href="#">Perfectum Dashboard</a></span>
+				</p>
+
+			</footer>
+
+		</div><!--/.fluid-container-->
+
+		<!-- start: JavaScript-->
+
+
+
+	</body>
+	</html>

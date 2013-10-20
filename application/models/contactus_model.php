@@ -22,6 +22,8 @@ class Contactus_model extends CI_Model{
         $this->id_contact=$data[0]->id_contact;
         $this->name=$data[0]->name;
         $this->company=$data[0]->company;
+        $this->email=$data[0]->email;
+        $this->status=$data[0]->status;
         $this->website=$data[0]->website;
         $this->content=$data[0]->content;
         $this->date_post = $data[0]->date_post;

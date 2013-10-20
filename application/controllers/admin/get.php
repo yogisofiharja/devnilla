@@ -241,6 +241,11 @@ class Get extends CI_Controller {
     }
     
     /* manage contact_us */
-    
+    function singleMail($id){
+        $message = new Contactus_model();
+        $data=array();
+        $data['message'] = $message->get_by('id_contact', $id);
+        echo json_encode($data['message']);
+    }
     
 }
