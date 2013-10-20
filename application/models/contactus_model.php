@@ -28,6 +28,21 @@ class Contactus_model extends CI_Model{
         
         return $this;
     }
+
+    function get_unread(){
+        // $this->db->select('*','select count(name) as jumlah from contactus where status=0', FALSE);
+        $this->db->where('status', 0);
+        $this->db->from('contactus');
+        return $this->db->get()->result();
+    }
+
+    function get_inbox(){
+
+    }
+
+    function get_outbox(){
+
+    }
     
     function save($data){        
         $this->db->insert('contactus', $data);
