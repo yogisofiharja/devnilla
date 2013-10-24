@@ -1,0 +1,61 @@
+{% extends '_layouts/admin_base.html.twig' %}
+{% block content %}
+<hr>
+
+<div class="row-fluid">
+	<div class="box span12 noMargin" onTablet="span12" onDesktop="span12">
+		<div class="box-header">
+			<h2>Mail From {{message.name}}</h2>
+		</div>
+		<div class="box-content">
+			<table class="table table-striped" style="width:30%;">
+				<tr>
+					<td style="width:40%;">Email</td>
+					<td>{{message.email}}</td>
+				</tr>
+				<tr>
+					<td>Sent at</td>
+					<td>{{message.date_post}}</td>
+				</tr>
+				<tr>
+					<td>Website</td>
+					<td>{{message.website}}</td>
+				</tr>
+				<tr>
+					<td>Company</td>
+					<td>{{message.company}}</td>
+				</tr>
+				<tr>
+					<td colspan="2">{{message.content}}</td>
+				</tr>
+			</table>
+			<hr>
+			<h2>Reply To {{message.email}}</h2>
+			<div class="form-horizontal">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label" for="focusedInput">Subject</label>
+						<div class="controls">
+							<input type="hidden" id="id_contact" value="{{message.id_contact}}">
+							<input class="input-xlarge focused" id="subject" type="text">
+						</div>
+					</div>	
+					<div class="control-group">
+						<label class="control-label" for="focusedInput"></label>
+						<div class="controls">
+							<textarea class="cleditor" id="pesan" name="pesan" rows="4" ></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="focusedInput"></label>
+						<div class="controls">
+							<input type="submit" class="btn btn-primary" id="send" value="Send"/>
+						</div>
+					</div>
+				</fieldset>			
+			</div>     
+		</div>
+	</div><!--/span-->
+</div> 
+<hr>       
+{% endblock %}

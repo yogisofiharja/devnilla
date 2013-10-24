@@ -8,3 +8,9 @@ function bacaEmail(id){
 		} 
 	});
 }
+
+function setRead(id){
+	$.post("http://localhost/devnilla/admin/post/setEmailRead",{
+		id:id
+	},"json");
+}

@@ -6,7 +6,7 @@ class Get extends CI_Controller {
         parent::__construct();
         $is_logged_in = $this->session->userdata('is_logged_in');
         if($is_logged_in==true){
-            
+            $this->load->spark('Twiggy/0.8.5');
         }else{
             redirect('admin/login');
             
@@ -15,8 +15,11 @@ class Get extends CI_Controller {
     public function index(){
         $this->load->spark('Twiggy/0.8.5');
         $message = new Contactus_model();
+        $outbox = new Outbox_model();
         $data = array();
-        $data['unread']=$message->get_unread();
+        $data['unread'] = $message->get_unread();
+        $data['inbox'] = $message->all();
+        $data['outbox'] = $outbox->all();
         // print_r($data['unread']);
         // $data['inbox']=$message->;
         $this->twiggy->set($data, NULL, FALSE);
@@ -245,7 +248,15 @@ class Get extends CI_Controller {
         $message = new Contactus_model();
         $data=array();
         $data['message'] = $message->get_by('id_contact', $id);
-        echo json_encode($data['message']);
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('detail_contact')->display();
     }
     
+    function singleOutbox($id){
+        $message = new Outbox_model();
+        $data=array();
+        $data['message'] = $message->get_by('id_outbox', $id);
+        $this->twiggy->set($data, NULL, FALSE);
+        $this->twiggy->template('detail_outbox')->display();
+    }
 }

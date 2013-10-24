@@ -14,7 +14,6 @@ class Contact extends CI_Controller {
 		$today = date('Y-m-d H:i:s');
 		$contact->date_post = $today;
 		$contact->status = 0;
-		$contact->save($contact);
 
 		//load email library and set the configuration
 		$this->load->library('email');
@@ -35,9 +34,14 @@ class Contact extends CI_Controller {
 		$this->email->from('support@devnila.com', 'Devnila Support');
 		$this->email->subject("Devnila notice");
 		$this->email->message($emailcontent);
-		$this->email->send();
 		
-		$result['hasil'] = "success";
-		echo json_encode($result);
+		if($this->email->send()){
+			$contact->save($contact);
+			$result['hasil'] = "success";
+			echo json_encode($result);
+		}else{
+			$result['hasil'] = "failed";
+			echo json_encode($result);
+		}
 	}
 }

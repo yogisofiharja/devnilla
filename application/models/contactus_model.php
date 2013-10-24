@@ -38,14 +38,6 @@ class Contactus_model extends CI_Model{
         return $this->db->get()->result();
     }
 
-    function get_inbox(){
-
-    }
-
-    function get_outbox(){
-
-    }
-    
     function save($data){        
         $this->db->insert('contactus', $data);
     }
@@ -64,6 +56,14 @@ class Contactus_model extends CI_Model{
         );
         
         $this->db->where('id_contact', $this->id_contact);
+        $this->db->update('contactus', $data);
+    }
+
+    function setRead($id){
+        $data=array(
+            'status'=>1
+        );
+        $this->db->where('id_contact', $id);
         $this->db->update('contactus', $data);
     }
     

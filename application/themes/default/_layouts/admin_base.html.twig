@@ -49,8 +49,6 @@
 	  <script src='{{ base_url() }}bootstrap/js/fullcalendar.min.js'></script>	
 	  <script src='{{ base_url() }}bootstrap/js/jquery.dataTables.min.js'></script>
 	  <script src="{{ base_url() }}bootstrap/js/excanvas.js"></script>
-	  <!--system.js buat aktifitas di local-->
-	  <script src="{{ base_url() }}base/js/system.js"></script>
 
 	  <script src="{{ base_url() }}bootstrap/js/jquery.flot.min.js"></script>
 	  <script src="{{ base_url() }}bootstrap/js/jquery.flot.pie.min.js"></script>
@@ -70,7 +68,41 @@
 	  <script src="{{ base_url() }}bootstrap/js/jquery.knob.js"></script>	
 	  <script src="{{ base_url() }}bootstrap/js/jquery.sparkline.min.js"></script>
 	  <script src="{{ base_url() }}bootstrap/js/custom.js"></script>	
-	  
+	  <!--system.js buat aktifitas di local-->
+	  <script src="{{ base_url() }}base/js/system.js"></script>
+	  <script type="text/javascript">
+	  $(document).ready(function(){
+	  	$('#send').click(function(e){
+	  		e.preventDefault();
+	  		if($("#subject").val()==""){
+	  			$("#subject").focus();
+	  		}else if($("#pesan").val()==""){
+	  			alert("clicked");
+	  			$("#pesan").focus();
+	  		}else{
+	  			var id_contact = $("#id_contact").val();
+	  			var subject = $("#subject").val();
+	  			var pesan = $("#pesan").val();
+	  			$.post("{{base_url()}}admin/post/reply",{
+	  				id_contact:id_contact,
+	  				subject:subject,
+	  				pesan:pesan
+	  			}, function(result){
+	  				$("#subject").val("");
+	  				$("#pesan").val("");
+	  				$("#send").after("<div style=\"width:45%;\"class=\"alert alert-success\">"+
+	  					"<a class=\"close\" data-dismiss=\"alert\" href=\"#\">×</a>"+
+	  					"<h4 class=\"alert-heading\">Success</h4>"+
+	  					"Your message has been sent:)"+
+	  				"</div>");
+	  				setTimeout(function() {
+	  					$( ".alert" ).fadeOut(600);
+	  				}, 3000);
+	  			},"json");
+	  		}
+	  	});
+	  });
+	  </script>
 
 
 	</head>

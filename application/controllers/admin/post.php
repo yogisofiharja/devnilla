@@ -206,6 +206,50 @@ class Post extends CI_Controller {
     }
     
     /* manage contact_us */
-    
+    function setEmailRead(){
+    	$id = $this->input->post("id");
+    	echo "ini id kontak".$id;
+        $message = new Contactus_model();
+        $message->setRead($id);
+    }
+
+    function reply(){
+    	$outbox = new Outbox_model();
+    	$contact = new Contactus_model();
+    	$outbox->id_contact = $this->input->post("id_contact");
+    	$outbox->subject = $this->input->post("subject");
+    	$outbox->content = $this->input->post("pesan");
+    	$today = date('Y-m-d H:i:s');
+    	$outbox->date_sent =$today;
+    	$data = array();
+    	$data['contact'] = $contact->get_by('id_contact', $this->input->post("id_contact"));
+    	//load email library and set the configuration
+		$this->load->library('email');
+		$config['protocol']    = 'smtp';
+		$config['smtp_host']    = 'ssl://sengkuni.in-hell.com';
+		$config['smtp_port']    = '465';
+		$config['smtp_timeout'] = '7';
+		$config['smtp_user']    = 'support@devnila.com';
+		$config['smtp_pass']    = 'pass4support';
+		$config['charset']    = 'utf-8';
+		$config['newline']    = "\r\n";
+		$config['mailtype'] = 'html';
+		
+		$emailcontent = $outbox->content;
+		$this->email->initialize($config);
+
+		$this->email->to($contact->email);
+		$this->email->from('support@devnila.com', 'Devnila Support');
+		$this->email->subject($outbox->subject);
+		$this->email->message($emailcontent);
+		if($this->email->send()){
+			$outbox->save($outbox);
+			$result['hasil'] = "success";
+			echo json_encode($result);
+		}else{
+			$result['hasil'] = "failed";
+			echo json_encode($result);
+		}
+    }
     
 }

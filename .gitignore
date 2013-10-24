@@ -173,6 +173,6 @@ pip-log.txt
 */nbproject/*
 
 #file-file yang bersifat local
-config/*
+config/database.php
 asset/resource/*
 
