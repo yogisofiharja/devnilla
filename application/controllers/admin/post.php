@@ -208,7 +208,6 @@ class Post extends CI_Controller {
     /* manage contact_us */
     function setEmailRead(){
     	$id = $this->input->post("id");
-    	echo "ini id kontak".$id;
         $message = new Contactus_model();
         $message->setRead($id);
     }

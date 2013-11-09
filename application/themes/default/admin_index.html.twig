@@ -2,15 +2,7 @@
 
 {% block content %}
 
-<div class="row-fluid">
-  <a class="quick-button-small span1">
-    <i class="icon-envelope"></i>
-    <p>Unread Messages</p>
-    <span class="notification green">+ 11</span>
-  </a>
-</div>
 
-<hr>
 
 <div class="row-fluid">
   <div class="box span12 noMargin" onTablet="span12" onDesktop="span12">
@@ -66,7 +58,7 @@
                 <td>{{ messages.name}}</td>
                 <td>{{ messages.date_post}}</td>
                 <td>{{ messages.email}}</td>
-                <td><a href="{{base_url()}}admin/get/singleMail/{{messages.id_contact}}" onclick="setRead({{messages.id_contact}})">{{ messages.content|slice(0,50) }}...<a></td>
+                <td><a href="{{base_url()}}admin/get/singleMail/{{messages.id_contact}}">{{ messages.content|slice(0,50) }}...</a></td>
               </tr>
               {% endfor %}
             </tbody>
@@ -85,10 +77,10 @@
             <tbody>
               {% for outbox in outbox %}
               <tr>
-                <td>{{ outbox.id_contact}}</td>
+                <td>{{ outbox.email}}</td>
                 <td>{{ outbox.date_sent}}</td>
                 <td>{{ outbox.subject}}</td>
-                <td><a href="{{base_url()}}admin/get/singleOutbox/{{outbox.id_outbox}}">{{ outbox.content|slice(0,50) }}...<a></td>
+                <td><a href="{{base_url()}}admin/get/singleOutbox/{{outbox.id_outbox}}">{{ outbox.content|slice(0,50) }}...</a></td>
               </tr>
               {% endfor %}
             </tbody>

@@ -27,6 +27,16 @@ class Contact extends CI_Controller {
 		$config['newline']    = "\r\n";
 		$config['mailtype'] = 'html';
 		
+		//send email to support
+		$emailcontent = "Pesan dari ".$contact->email.". Silahkan cek website devnila.com";
+		$this->email->initialize($config);
+
+		$this->email->to('support@devnila.com');
+		$this->email->from('support@devnila.com', 'Devnila Support');
+		$this->email->subject("Devnila notice");
+		$this->email->message($emailcontent);
+		$this->email->send();
+		//send email to the client
 		$emailcontent = "Dear ".$contact->name.".<br/>Thanks for contacting us. We will response your message soon. Please wait for the reply from us.<br/> <br/>Best regards,<br/>Devnila <br/>http://devnila.com";
 		$this->email->initialize($config);
 

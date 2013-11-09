@@ -11,9 +11,7 @@ class Contactus_model extends CI_Model{
     var $status='';
     
    function all(){
-        $q=$this->db->get('contactus');
-        
-        return $q->result();
+        return $this->db->query("SELECT * FROM  contactus ORDER BY  date_post DESC ")->result();       
     }
     
     function get_by($key, $value){
@@ -33,6 +31,7 @@ class Contactus_model extends CI_Model{
 
     function get_unread(){
         // $this->db->select('*','select count(name) as jumlah from contactus where status=0', FALSE);
+        $this->db->order_by("date_post", "desc"); 
         $this->db->where('status', 0);
         $this->db->from('contactus');
         return $this->db->get()->result();
