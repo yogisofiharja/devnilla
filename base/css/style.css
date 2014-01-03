@@ -37,18 +37,18 @@ div, article, section, header, footer, nav, li {
 	visibility:hidden; /* For clearing */
 }
 body {
-	background:#ffffff;
-	color: #1fb4da;
+	background:#040414;
+	color: #2e2ed6;
 	font-size: 100%;
 	font-family: 'Quattrocento', serif;
 }
 
 ::-moz-selection {
-	background:#1fb4da;
+	background:#6666ff;
 	color:#fff;
 }
 ::selection {
-	background:#1fb4da;
+	background:#6666ff;
 	color:#fff;
 }
 /*---------- FORMS ----------*/
@@ -85,7 +85,7 @@ p {
 	font-size: 1em; /* 16px */
 	line-height: 1.5; /* 24px */
 	margin: 0 0 1.5em 0;
-	color: #333;
+	color: #040414;
 }
 ul, ol {
 	font-size: 1em; /* 16px */
@@ -95,17 +95,17 @@ ul, ol {
 body, input, textarea {
 }
 a:link {
-	color: #1fb4da;
+	color: #6666ff;
 }
 a:visited {
-	color: #1fb4da;
+	color: #6666ff;
 }
 a:hover {
-	color: #1fb4da;
+	color: #6666ff;
 	text-decoration: underline;
 }
 a:active {
-	color: #1fb4da;
+	color: #6666ff;
 	text-decoration: underline;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -170,7 +170,7 @@ em {
 	font-family: 'Patua One', cursive;
 }
 .more-link:link, .more-link:visited {
-	color: #1fb4da;
+	color: #6666ff;
 	text-transform: uppercase;
 }
 /* ---------------------------------------------------------------------------------------------------------- 
@@ -220,7 +220,7 @@ em {
 }
 .navbar .brand a:hover {
 	text-decoration: none;
-	color:#1fb4da;
+	color:#6666ff;
 	transition: color .15s linear;
 	-webkit-transition: color .15s linear;
 	-moz-transition: color .15s linear;
@@ -233,8 +233,8 @@ em {
 }
 .navbar-inverse .navbar-inner {
 	background-repeat: repeat;
-	background-color: #ffffff;
-	border-color: #1fb4da;
+	background-color: #040414;
+	border-color: #6666ff;
 }
 .navbar-wrapper {
 	overflow:hidden;/* No fixed height, will break collapsible nav */
@@ -246,10 +246,10 @@ ul#menu-main > li > a {
 	font-family: 'Patua One', cursive;
 	font-weight: normal;
 	font-size: 1em;
-	color: #333;
+	color: #bebefa;
 }
 ul#menu-main > li > a:hover {
-	background: #1fb4da;
+	background: #6666ff;
 	padding: 9px 15px;
 	border-radius: 3px;
 	color:#fff;
@@ -276,7 +276,7 @@ ul#menu-main > li > a:hover {
 	text-align:center;
 }
 #headerwrap h1 {
-	color: #fff;
+	color: #e3e3fd;
 	font-family: 'Patua One', cursive;
 	font-size: 4em;
 	font-weight: 400;
@@ -288,10 +288,10 @@ ul#menu-main > li > a:hover {
 	font-size: 2em;
 	font-weight: normal;
 	margin: 0.5em 0;
-	text-shadow: 1px 1px 1px #333333;
+	text-shadow: 1px 1px 1px #040414333;
 }
 #headerwrap h1 span {
-	color:#1fb4da;
+	color:#6666ff;
 }
 #headerwrap input[type=text] {
 	background: rgba(227, 231, 228, 1);
@@ -324,7 +324,7 @@ ul#menu-main > li > a:hover {
 	margin: 0;
 	border: 0;
 	text-transform: none;
-	background: #1fb4da !important;
+	background: #6666ff !important;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -360,6 +360,7 @@ section.single-page h1 {
 	/*background: ;*/
 	height: 406px;
 	z-index: 500;
+	background-color: #e3e3fd; 
 	/*box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
 	-webkit-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);*/
@@ -387,7 +388,7 @@ section.single-page h1 {
 	font-size: 40px;
 	margin-bottom: 0;
 	line-height: 1.35;
-	color: #333;
+	color: #040414;
 }
 /* Portfolio */
 
@@ -439,6 +440,7 @@ section#portfolio .align {
 
 section#services {
 	padding-bottom: 0em;
+	background-color: #e3e3fd;
 }
 #services h1 {
 	font-size: 3em;
@@ -450,6 +452,7 @@ section#services h2 {
 	margin-bottom: 15px;
 	margin-top: 10px;
 	text-align:center;
+	color: #040414;
 }
 section#services p {
 	margin:10px;
@@ -463,7 +466,7 @@ section#services .align .sev_icon {
 	text-align:center;
 	margin:10px 0 20px 0;
 	font-size: 0.6em;
-	color:#5097FF;
+	color:#040414;
 }
 section#services .span3 {
 	background:#e9e9e9;
@@ -484,7 +487,7 @@ section#testimonials {
 	height:  647px;
 	background: url("../img/yellow_testimonial.png") repeat-x 0 0;
 	padding: 0;
-	color: #5097FF;
+	color: #6666ff;
 	z-index: 500;
 	box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
@@ -555,8 +558,9 @@ article .inside {
 /* Team and Contact */
 
 section#team, section#contact {
-	color: #1fb4da;
-	background:#fff;
+	color: #2e2ed6;
+	background:#040414;
+	background-color: #e3e3fd;
 }
 section#team .align, section#contact .align {
 	font-size: 6em;
@@ -611,7 +615,7 @@ section#team .align, section#contact .align {
 	z-index: 999;
 }
 #theme-form input[type=text], .cform-form textarea {
-	background: rgba(227, 231, 228, 1);
+	background: #fff;
 	font-family: 'Open Sans', sans serif;
 	border: 0;
 	text-align: left;
@@ -643,7 +647,7 @@ section#team .align, section#contact .align {
 	display: block;
 	border: 0;
 	text-transform: none;
-	background: #1fb4da !important;
+	background: #2e2ed6 !important;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -652,7 +656,7 @@ section#team .align, section#contact .align {
 	-webkit-box-shadow: none;
 }
 #theme-form input[type=submit]:hover, #theme-form input[type=submit]:active {
-	background: #333 !important;
+	background: #040414 !important;
 	color:#fff;
 }
 #theme-form textarea {
@@ -794,7 +798,7 @@ footer p {
 	display: block;
 	border: 0;
 	text-transform: none;
-	background: #1fb4da !important;
+	background: #6666ff !important;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -944,7 +948,7 @@ footer p {
 		font-size: 26px; /* font-size: 26px; */
 		margin-bottom: 0;
 		line-height: 30px;
-		color: #333;
+		color: #040414;
 	}
 }
 
@@ -1067,7 +1071,7 @@ footer p {
 		font-size: 26px; /* font-size: 26px; */
 		margin-bottom: 0;
 		line-height: 30px;
-		color: #333;
+		color: #040414;
 	}
 }
 
