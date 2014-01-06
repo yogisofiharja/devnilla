@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "welcome";
 $route['admin'] = "admin/get";
+$route['new'] = "new/beranda";
 $route['404_override'] = '';
 
 
