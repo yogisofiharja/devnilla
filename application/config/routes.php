@@ -41,8 +41,7 @@
 $route['default_controller'] = "welcome";
 $route['admin'] = "admin/get";
 $route['new'] = "new/beranda";
-$route['404_override'] = '';
-
+$route['404_override'] = ''; 
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
