@@ -70,6 +70,7 @@ strong {
 
 p {
 	margin: 0 0 30px;
+	line-height: 28px;
 }
 
 hr {
@@ -728,6 +729,77 @@ nav#menu #menu-nav li a:hover {
 	color: #5E82DE;
 }
 
+.image-wrap {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 25px;
+	cursor: pointer;
+}
+
+.image-wrap img {
+	width: 100%;	
+}
+
+.image-wrap  .hover-wrap {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+	opacity: 0;
+	filter: alpha(opacity=0);
+	
+	-webkit-transition: all 450ms ease-out 0s;	
+	   -moz-transition: all 450ms ease-out 0s;
+		 -o-transition: all 450ms ease-out 0s;
+		    transition: all 450ms ease-out 0s;
+		  
+	-webkit-transform: rotateY(180deg) scale(0.5,0.5);
+	   -moz-transform: rotateY(180deg) scale(0.5,0.5);
+		-ms-transform: rotateY(180deg) scale(0.5,0.5);
+		 -o-transform: rotateY(180deg) scale(0.5,0.5);
+			transform: rotateY(180deg) scale(0.5,0.5);	
+}
+
+.image-wrap:hover .hover-wrap,
+.image-wrap.active .hover-wrap {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	
+	-webkit-transform: rotateY(0deg) scale(1,1);
+	   -moz-transform: rotateY(0deg) scale(1,1);
+		-ms-transform: rotateY(0deg) scale(1,1);
+		 -o-transform: rotateY(0deg) scale(1,1);
+		    transform: rotateY(0deg) scale(1,1);
+}
+
+.image-wrap .hover-wrap .overlay-img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #5E82DE;
+	
+	opacity: 0.80;
+	filter: alpha(opacity=80);
+}
+
+.image-wrap .hover-wrap .overlay-text-thumb {
+	position: absolute;
+	width: 100%;
+	height: 32px;
+	top: 50%;
+	margin: -16px 0 0 0;
+	color: #FFFFFF;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
 #thumbs {
 	margin: 0;
 	padding: 0;	
@@ -1022,6 +1094,14 @@ nav#menu #menu-nav li a:hover {
 	color: #FFFFFF;
 }
 
+#map {
+
+    color: #444444;
+    text-align: left;
+    width: 100%;
+ 	height: 413px;
+	margin-top:0px;
+}
 
 /* ==================================================
    Twitter Feed

@@ -6,101 +6,98 @@
 <!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
 
-<!-- Meta Tags -->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Meta Tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<title>Devnila</title>   
+    <title>Devnila</title>   
 
-<meta name="description" content="Insert Your Site Description" /> 
+    <meta name="description" content="Insert Your Site Description" /> 
 
-<!-- Mobile Specifics -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="HandheldFriendly" content="true"/>
-<meta name="MobileOptimized" content="320"/>   
+    <!-- Mobile Specifics -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>   
 
-<!-- Mobile Internet Explorer ClearType Technology -->
-<!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
+    <!-- Mobile Internet Explorer ClearType Technology -->
+    <!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
 
-<!-- Bootstrap -->
-<link href="<?php echo base_url();?>base/new/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="<?php echo base_url();?>base/new/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Main Style -->
-<link href="<?php echo base_url();?>base/new/css/main.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="<?php echo base_url();?>base/new/css/main.css" rel="stylesheet">
 
-<!-- Supersized -->
-<link href="<?php echo base_url();?>base/new/css/supersized.css" rel="stylesheet">
-<link href="<?php echo base_url();?>base/new/css/supersized.shutter.css" rel="stylesheet">
+    <!-- Supersized -->
+    <link href="<?php echo base_url();?>base/new/css/supersized.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>base/new/css/supersized.shutter.css" rel="stylesheet">
 
-<!-- FancyBox -->
-<link href="<?php echo base_url();?>base/new/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <!-- FancyBox -->
+    <link href="<?php echo base_url();?>base/new/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 
-<!-- Font Icons -->
-<link href="<?php echo base_url();?>base/new/css/fonts.css" rel="stylesheet">
+    <!-- Font Icons -->
+    <link href="<?php echo base_url();?>base/new/css/fonts.css" rel="stylesheet">
 
-<!-- Shortcodes -->
-<link href="<?php echo base_url();?>base/new/css/shortcodes.css" rel="stylesheet">
+    <!-- Shortcodes -->
+    <link href="<?php echo base_url();?>base/new/css/shortcodes.css" rel="stylesheet">
 
-<!-- Responsive -->
-<link href="<?php echo base_url();?>base/new/css/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="<?php echo base_url();?>base/new/css/responsive.css" rel="stylesheet">
+    <!-- Responsive -->
+    <link href="<?php echo base_url();?>base/new/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>base/new/css/responsive.css" rel="stylesheet">
 
-<!-- Supersized -->
-<link href="<?php echo base_url();?>base/new/css/supersized.css" rel="stylesheet">
-<link href="<?php echo base_url();?>base/new/css/supersized.shutter.css" rel="stylesheet">
+    <!-- Supersized -->
+    <link href="<?php echo base_url();?>base/new/css/supersized.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>base/new/css/supersized.shutter.css" rel="stylesheet">
 
-<!-- Google Font -->
-<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
 
-<!-- Fav Icon -->
-<link rel="shortcut icon" href="#">
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="#">
 
-<link rel="apple-touch-icon" href="#">
-<link rel="apple-touch-icon" sizes="114x114" href="#">
-<link rel="apple-touch-icon" sizes="72x72" href="#">
-<link rel="apple-touch-icon" sizes="144x144" href="#">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="apple-touch-icon" sizes="114x114" href="#">
+    <link rel="apple-touch-icon" sizes="72x72" href="#">
+    <link rel="apple-touch-icon" sizes="144x144" href="#">
 
-<!-- Modernizr -->
-<script src="<?php echo base_url();?>base/new/js/modernizr.js"></script>
+    <!-- Modernizr -->
+    <script src="<?php echo base_url();?>base/new/js/modernizr.js"></script>
 
-<!-- Analytics -->
-<script type="text/javascript">
+    <!-- Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'Insert Your Code']);
-  _gaq.push(['_trackPageview']);
+  ga('create', 'UA-46996283-1', 'devnila.com');
+  ga('send', 'pageview');
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-<!-- End Analytics -->
+  </script>
+  <!-- End Analytics -->
 
 </head>
 
 
 <body>
 
-<!-- This section is for Splash Screen -->
-<div class="ole">
-<section id="jSplash">
-	<div id="circle"></div>
-</section>
-</div>
-<!-- End of Splash Screen -->
+    <!-- This section is for Splash Screen -->
+    <div class="ole">
+        <section id="jSplash">
+           <div id="circle"></div>
+       </section>
+   </div>
+   <!-- End of Splash Screen -->
 
-<!-- Homepage Slider -->
-<div id="home-slider">	
+   <!-- Homepage Slider -->
+   <div id="home-slider">	
     <div class="overlay"></div>
 
     <div class="slider-text">
     	<div id="slidecaption">Devnila</div>
     </div>   
-	
-	<div class="control-nav">
-        
+
+    <div class="control-nav">
+
         <ul id="slide-list"></ul>
         
         <a id="nextsection" href="#work"><i class="font-icon-arrow-simple-down"></i></a>
@@ -112,322 +109,240 @@
 <header>
     <div class="sticky-nav">
     	<a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
-        
+
         <div id="logo">
         	<a id="goUp" href="#home-slider" title="Devnila">Devnila</a>
         </div>
         
         <nav id="menu">
         	<ul id="menu-nav">
-            	<li class="current"><a href="#home-slider">Home</a></li>
-                <li><a href="#work">Our Work</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-				<li><a href="shortcodes.html" class="external">Shortcodes</a></li>
-            </ul>
-        </nav>
-        
-    </div>
+               <li class="current"><a href="#home-slider">Home</a></li>
+               <li><a href="#work">Our Services & Work</a></li>
+               <li><a href="#about">About Us</a></li>
+               <li><a href="#contact">Contact</a></li>
+           </ul>
+       </nav>
+
+   </div>
 </header>
 <!-- End Header -->
 
 <!-- Our Work Section -->
 <div id="work" class="page">
 	<div class="container">
-    	<!-- Title Page -->
-        <div class="row">
-            <div class="span12">
-                <div class="title-page">
-                    <h2 class="title">Our Work</h2>
-                    <h3 class="title-description">Check Out Our Projects on <a href="#">Dribbble</a>.</h3>
-                </div>
-            </div>
-        </div>
-        <!-- End Title Page -->
-        
-        <!-- Portfolio Projects -->
-        <div class="row">
-        	<div class="span3">
-            	<!-- Filter -->
-                <nav id="options" class="work-nav">
-                    <ul id="filters" class="option-set" data-option-key="filter">
-                    	<li class="type-work">Type of Work</li>
-                        <li><a href="#filter" data-option-value="*" class="selected">All Projects</a></li>
-                        <li><a href="#filter" data-option-value=".design">Design</a></li>
-                        <li><a href="#filter" data-option-value=".photography">Photography</a></li>
-                        <li><a href="#filter" data-option-value=".video">Video</a></li>
-                    </ul>
-                </nav>
-                <!-- End Filter -->
-            </div>
-            
-            <div class="span9">
-            	<div class="row">
-                	<section id="projects">
-                    	<ul id="thumbs">
-                        
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 design">
-                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="<?php echo base_url();?>base/new/img/work/full/image-01-full.jpg">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-01.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                            </li>
-                        	<!-- End Item Project -->
-                            
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 design">
-                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="<?php echo base_url();?>base/new/img/work/full/image-02-full.jpg">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-02.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                            </li>
-                        	<!-- End Item Project -->
-                            
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 photography">
-                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="<?php echo base_url();?>base/new/img/work/full/image-03-full.jpg">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                            </li>
-                        	<!-- End Item Project -->
-                            
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 video">
-                            	<!-- Fancybox Media - Gallery Enabled - Title - Link to Video -->
-                            	<a class="hover-wrap fancybox-media" data-fancybox-group="video" title="Video Content From Vimeo" href="http://vimeo.com/51460511">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-08.jpg" alt="Video">
-                            </li>
-                        	<!-- End Item Project -->
-                            
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 photography">
-                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="<?php echo base_url();?>base/new/img/work/full/image-04-full.jpg">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-04.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                            </li>
-                        	<!-- End Item Project -->
-                            
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 photography">
-                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" href="<?php echo base_url();?>base/new/img/work/full/image-05-full.jpg">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-05.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                            </li>
-                        	<!-- End Item Project -->
-                            
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 video">
-                            	<!-- Fancybox Media - Gallery Enabled - Title - Link to Video -->
-                            	<a class="hover-wrap fancybox-media" data-fancybox-group="video" title="Video Content From Vimeo" href="http://vimeo.com/50834315">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-09.jpg" alt="Video">
-                            </li>
-                        	<!-- End Item Project -->
-                            
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 design">
-                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" href="<?php echo base_url();?>base/new/img/work/full/image-06-full.jpg">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-06.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                            </li>
-                        	<!-- End Item Project -->
-                            
-							<!-- Item Project and Filter Name -->
-                        	<li class="item-thumbs span3 design">
-                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Beach" href="<?php echo base_url();?>base/new/img/work/full/image-07-full.jpg">
-                                	<span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url();?>base/new/img/work/thumbs/image-07.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                            </li>
-                        	<!-- End Item Project -->
-                        </ul>
-                    </section>
-                    
-            	</div>
-            </div>
-        </div>
-        <!-- End Portfolio Projects -->
-    </div>
-</div>
-<!-- End Our Work Section -->
-
-<!-- About Section -->
-<div id="about" class="page-alternate">
-<div class="container">
-    <!-- Title Page -->
-    <div class="row">
+       <!-- Title Page -->
+       <div class="row">
         <div class="span12">
             <div class="title-page">
-                <h2 class="title">About Us</h2>
-                <h3 class="title-description">Learn About our Team &amp; Culture.</h3>
+                <h2 class="title">Our Services</h2>
             </div>
         </div>
     </div>
     <!-- End Title Page -->
-    
-    <!-- People -->
     <div class="row">
-    	
+
         <!-- Start Profile -->
-    	<div class="span4 profile">
-        	<div class="image-wrap">
+        <div class="span4 profile">
+            <div class="image-wrap">
                 <div class="hover-wrap">
                     <span class="overlay-img"></span>
-                    <span class="overlay-text-thumb">CTO/Founder</span>
+                    <!-- <span class="overlay-text-thumb">CTO/Founder</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/new/img/profile/profile-01.jpg" alt="John Doe">
+                <img src="<?php echo base_url();?>base/img/acong.jpg" alt="John Doe">
             </div>
-            <h3 class="profile-name">John Doe</h3>
-            <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat <a href="#">hendrerit dictum</a>. 
-            Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-            	
-            <div class="social">
-            	<ul class="social-icons">
-                	<li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
-                    <li><a href="#"><i class="font-icon-social-dribbble"></i></a></li>
-                    <li><a href="#"><i class="font-icon-social-facebook"></i></a></li>
-                </ul>
-            </div>
+            <h3 class="profile-name">Mobile Application</h3>
+            <p class="profile-description">Every mobile application has its own identity and specific function so that the customers will always keep that application in their mind. We'll help you developing your application effectively, good design without leaving the main purpose of your application.</p>
+
         </div>
         <!-- End Profile -->
         
         <!-- Start Profile -->
-    	<div class="span4 profile">
-        	<div class="image-wrap">
+        <div class="span4 profile">
+            <div class="image-wrap">
                 <div class="hover-wrap">
                     <span class="overlay-img"></span>
-                    <span class="overlay-text-thumb">Creative Director</span>
+                    <!-- <span class="overlay-text-thumb">Creative Director</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/new/img/profile/profile-02.jpg" alt="Jane Helf">
+                <img src="<?php echo base_url();?>base/img/ape.jpg" alt="Jane Helf">
             </div>
-            <h3 class="profile-name">Jane Helf</h3>
-            <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat <a href="#">hendrerit dictum</a>. 
-            Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-            	
-            <div class="social">
-            	<ul class="social-icons">
-                	<li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
-                    <li><a href="#"><i class="font-icon-social-email"></i></a></li>
-                </ul>
-            </div>
+            <h3 class="profile-name">Web Application</h3>
+            <p class="profile-description">Nowadays, website is a information source, promotion media that everybody know. We are here to make an innovation with interactive design. We are good at Company profile website, social networking, e-commerce, e-learning, and Social Media Engagement.</p>
+            
         </div>
         <!-- End Profile -->
         
         <!-- Start Profile -->
-    	<div class="span4 profile">
-        	<div class="image-wrap">
+        <div class="span4 profile">
+            <div class="image-wrap">
                 <div class="hover-wrap">
                     <span class="overlay-img"></span>
-                    <span class="overlay-text-thumb">Lead Designer</span>
+                    <!-- <span class="overlay-text-thumb">Lead Designer</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/new/img/profile/profile-03.jpg" alt="Joshua Insanus">
+                <img src="<?php echo base_url();?>base/img/yogi.jpg" alt="Joshua Insanus">
             </div>
-            <h3 class="profile-name">Joshua Insanus</h3>
-            <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat <a href="#">hendrerit dictum</a>. 
-            Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-            	
-            <div class="social">
-            	<ul class="social-icons">
-                	<li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
-                    <li><a href="#"><i class="font-icon-social-linkedin"></i></a></li>
-                    <li><a href="#"><i class="font-icon-social-google-plus"></i></a></li>
-                    <li><a href="#"><i class="font-icon-social-vimeo"></i></a></li>
-                </ul>
+            <h3 class="profile-name">Desktop Application</h3>
+            <p class="profile-description">Desktop application can be a bulls-eye solution for you to manage your company. We can help you build your company Information System and another thematic application to give your company an easy-management so everything will be under your control.</p>
+            
+        </div>
+        <!-- End Profile -->
+        
+    </div>
+
+    <div class="row">
+
+        <!-- Start Profile -->
+        <div class="span4 profile">
+            <div class="image-wrap">
+                <div class="hover-wrap">
+                    <span class="overlay-img"></span>
+                    <!-- <span class="overlay-text-thumb">CTO/Founder</span> -->
+                </div>
+                <img src="<?php echo base_url();?>base/img/acong.jpg" alt="John Doe">
             </div>
+            <h3 class="profile-name">Media Interactive</h3>
+            <p class="profile-description">Media interactive has an important role in Industries and Education wether its for promotion, simulation and training purpose. We can provide you a very best Media Interactive for your need. </p>
+
+        </div>
+        <!-- End Profile -->
+        
+        <!-- Start Profile -->
+        <div class="span4 profile">
+            <div class="image-wrap">
+                <div class="hover-wrap">
+                    <span class="overlay-img"></span>
+                    <!-- <span class="overlay-text-thumb">Creative Director</span> -->
+                </div>
+                <img src="<?php echo base_url();?>base/img/ape.jpg" alt="Jane Helf">
+            </div>
+            <h3 class="profile-name">Network Service</h3>
+            <p class="profile-description">To complete dissemination of informationin an organization, that's why we have computer networking. We'll help you to fulfill your networking needs with our professional team. We have a good skill in network installation, mail server and server configuration.</p>
+            
+        </div>
+        <!-- End Profile -->
+        
+        <!-- Start Profile -->
+        <div class="span4 profile">
+            <div class="image-wrap">
+                <div class="hover-wrap">
+                    <span class="overlay-img"></span>
+                    <!-- <span class="overlay-text-thumb">Lead Designer</span> -->
+                </div>
+                <img src="<?php echo base_url();?>base/img/yogi.jpg" alt="Joshua Insanus">
+            </div>
+            <h3 class="profile-name">IT Consultant</h3>
+            <p class="profile-description">We can help you to find the best suites for your IT needs. We'll design the best solution for all of your IT needs. Whatever you want, We'll fulfill it.</p>
+            
         </div>
         <!-- End Profile -->
         
     </div>
     <!-- End People -->
+
 </div>
 </div>
-<!-- End About Section -->
+<!-- End Our Work Section -->
 
-
-<!-- Contact Section -->
-<div id="contact" class="page">
-<div class="container">
-    <!-- Title Page -->
-    <div class="row">
-        <div class="span12">
-            <div class="title-page">
-                <h2 class="title">Get in Touch</h2>
-                <h3 class="title-description">We’re currently accepting new client projects. We look forward to serving you.</h3>
+<!-- About Section -->
+<div id="about" class="page-alternate">
+    <div class="container">
+        <!-- Title Page -->
+        <div class="row">
+            <div class="span12">
+                <div class="title-page">
+                    <h2 class="title">About Us</h2>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- End Title Page -->
-    
-    <!-- Contact Form -->
-    <div class="row">
-    	<div class="span9">
-        
-        	<form id="contact-form" class="contact-form" action="#">
-            	<p class="contact-name">
-            		<input id="contact_name" type="text" placeholder="Full Name" value="" name="name" />
-                </p>
-                <p class="contact-email">
-                	<input id="contact_email" type="text" placeholder="Email Address" value="" name="email" />
-                </p>
-                <p class="contact-message">
-                	<textarea id="contact_message" placeholder="Your Message" name="message" rows="15" cols="40"></textarea>
-                </p>
-                <p class="contact-submit">
-                	<a id="contact-submit" class="submit" href="#">Send Your Email</a>
-                </p>
-                
-                <div id="response">
-                
+        <!-- End Title Page -->
+
+        <!-- People -->
+        <div class="row">
+            <div class="span9">
+                <blockquote>
+                    <h3>We work to make life easier with innovation of technology.
+                        We develop amazing application and combine beautiful design
+                        so that application can be user-friendly.</h3>
+
+                    </blockquote>
                 </div>
-            </form>
-         
+                <!-- End Blockquote -->
+            </div>
+            <div class="row">
+                <div class="span6">
+                    <h4>
+                        We are Devnila, Indonesia-based IT developer that has very big passionate in Mobile Application, Web Application and Networking.
+                    </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span3">
+                </div>
+                <div class="span6">
+                    <h4>Online and Mobile application has an important role in developing your business. Nowadays everybody needs a connection, everybody will find information through the internet. </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span6">
+                    <h4>We're coming to this world to help. We give you technology, make you as our partners to help your brand, and connect with your customers.</h4>
+                </div>
+
+            </div>      
         </div>
-        
-        <div class="span3">
-        	<div class="contact-details">
-        		<h3>Contact Details</h3>
-                <ul>
-                    <li><a href="#">hello@brushed.com</a></li>
-                    <li>(916) 375-2525</li>
+    </div>
+    <!-- End About Section -->
+
+
+    <!-- Contact Section -->
+    <div id="contact" class="page">
+        <div class="container">
+            <!-- Title Page -->
+            <div class="row">
+                <div class="span12">
+                    <div class="title-page">
+                        <h2 class="title">Contact Us</h2>
+                        <h3 class="title-description">We’re currently accepting new client projects. We look forward to serving you.</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- End Title Page -->
+
+            <!-- Contact Form -->
+            <div class="row">
+               <div class="span9">
+
+                   <form id="contact-form" class="contact-form" action="#">
+                       <p class="contact-name">
+                          <input id="contact_name" type="text" placeholder="Full Name" value="" name="name" />
+                      </p>
+                      <p class="contact-email">
+                       <input id="contact_email" type="text" placeholder="Email Address" value="" name="email" />
+                   </p>
+                   <p class="contact-message">
+                       <textarea id="contact_message" placeholder="Your Message" name="message" rows="15" cols="40"></textarea>
+                   </p>
+                   <p class="contact-submit">
+                       <a id="contact-submit" class="submit" href="#">Send Your Email</a>
+                   </p>
+
+                   <div id="response">
+
+                   </div>
+               </form>
+
+           </div>
+
+           <div class="span3">
+               <div class="contact-details">
+                  <h3>Contact Details</h3>
+                  <ul>
+                    <li><a href="mailto:support@devnila.com">support@devnila.com</a></li>
+                    <li>+6282126707069</li>
                     <li>
-                        Brushed Studio
+                        Devnila
                         <br>
-                        5240 Vanish Island. 105
+                        Jalan Gagak, 144, Bandung
                         <br>
-                        Unknow
+                        Indonesia
                     </li>
                 </ul>
             </div>
@@ -437,26 +352,18 @@
 </div>
 </div>
 <!-- End Contact Section -->
+<!--Map-->
 
-<!-- Twitter Feed -->
-<div id="twitter-feed" class="page-alternate">
-	<div class="container">
-    	<div class="row">
-            <div class="span12">
-                <div class="follow">
-                    <a href="https://twitter.com/Bluxart" title="Follow Me on Twitter" target="_blank"><i class="font-icon-social-twitter"></i></a>
-                </div>
-                    
-                <div id="ticker" class="query"> 
-                </div>
-            </div>
-        </div>
+<div id="map" class="column">
+    <div id="mapHolder">
     </div>
-</div>
-<!-- End Twitter Feed -->
+</div>  
+
+<!--End map-->
+
 
 <!-- Socialize -->
-<div id="social-area" class="page">
+<!-- <div id="social-area" class="page">
 	<div class="container">
     	<div class="row">
             <div class="span12">
@@ -476,7 +383,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End Socialize -->
 
 <!-- Footer -->
@@ -493,7 +400,7 @@
 
 
 <!-- Js -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
+<script src="<?php echo base_url();?>base/new/js/jquery.min.js"></script> <!-- jQuery Core -->
 <script src="<?php echo base_url();?>base/new/js/bootstrap.min.js"></script> <!-- Bootstrap -->
 <script src="<?php echo base_url();?>base/new/js/supersized.3.2.7.min.js"></script> <!-- Slider -->
 <script src="<?php echo base_url();?>base/new/js/waypoints.js"></script> <!-- WayPoints -->
@@ -504,7 +411,38 @@
 <script src="<?php echo base_url();?>base/new/js/jquery.tweet.js"></script> <!-- Tweet -->
 <script src="<?php echo base_url();?>base/new/js/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
 <script src="<?php echo base_url();?>base/new/js/main.js"></script> <!-- Default JS -->
-<!-- End Js -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="<?php echo base_url();?>base/new/js/gmaps.js" type="text/javascript"></script>
+<script>
+
+//---------------------------------- Gmap setup -----------------------------------------//
+var map;
+$(document).ready(function(){
+
+
+  map = new GMaps({
+    div: '#map',
+    lat: -6.894681860424366,
+    lng: 107.62804627418518,
+    zoom: 13,
+    zoomControl : true, 
+    zoomControlOpt: { style : 'SMALL', position: 'TOP_RIGHT' },
+    panControl : false,
+    scrollwheel: false
+});
+
+
+  map.addMarker({
+    lat: -6.894681860424366,
+    lng: 107.62804627418518,
+    title: 'Devnila',
+    infoWindow: {
+        content: '<p>Jalan Gagak no. 144, Bandung, Indonesia</p>'
+    }
+});
+});
+//---------------------------------- End gmap setup -----------------------------------------//
+</script>
 
 </body>
 </html>
