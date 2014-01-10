@@ -184,7 +184,7 @@ BRUSHED.fancyBox = function(){
    Contact Form
 ================================================== */
 
-BRUSHED.contactForm = function(){
+/*BRUSHED.contactForm = function(){
 	$("#contact-submit").on('click',function() {
 		$contact_form = $('#contact-form');
 		
@@ -207,7 +207,7 @@ BRUSHED.contactForm = function(){
 		});
 		return false;
 	});
-}
+}*/
 
 
 /* ==================================================
@@ -435,7 +435,7 @@ $(document).ready(function(){
 	BRUSHED.goUp();
 	BRUSHED.filter();
 	BRUSHED.fancyBox();
-	BRUSHED.contactForm();
+	// BRUSHED.contactForm();
 	BRUSHED.tweetFeed();
 	BRUSHED.scrollToTop();
 	BRUSHED.utils();

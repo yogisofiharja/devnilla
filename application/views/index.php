@@ -59,6 +59,8 @@
     <link rel="apple-touch-icon" sizes="72x72" href="#">
     <link rel="apple-touch-icon" sizes="144x144" href="#">
 
+    <script src="<?php echo base_url();?>base/new/js/jquery.min.js"></script> <!-- jQuery Core -->
+
     <!-- Modernizr -->
     <script src="<?php echo base_url();?>base/new/js/modernizr.js"></script>
 
@@ -69,11 +71,67 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-46996283-1', 'devnila.com');
-  ga('send', 'pageview');
+        ga('create', 'UA-46996283-1', 'devnila.com');
+        ga('send', 'pageview');
 
-  </script>
-  <!-- End Analytics -->
+    </script>
+    <!-- End Analytics -->
+    <!-- Contact us ajax process-->
+    <script type="text/javascript">
+        function emptyForm(){
+            $("#email").val("");
+            $("#content").val("");
+            $("#name").val("");
+            $("#company").val("");
+            $("#website").val("");
+        }
+        $(document).ready(function(){
+            console.log("i am ready");
+       
+
+            $("#contact-submit").click(function(e){
+                e.preventDefault();
+                if($("#email").val()==""){
+                    $("#email").focus();
+                }else if($("#content").val()==""){
+                    $("#content").focus();
+                }else{
+                    console.log("terpenuhi");
+                    var name = $("#name").val();
+                    var email = $("#email").val();
+                    var company = $("#company").val();
+                    var website = $("#website").val();
+                    var content = $("#content").val();
+
+                    /*$.post("<?php echo base_url()?>contact/simpan",{
+                        name:name,
+                        email:email,
+                        company:company,
+                        website:website,
+                        content:content
+                    }, function(data){
+                        emptyForm();
+                        //set alert
+                        console.log(data)
+                    }, "json");*/
+                    $.ajax({
+                        type: 'POST',
+                        url: "<?php echo base_url();?>contact/simpan",
+                        data: {name:name,email:email,company:company,website:website,content:content},
+                        dataType: "json",
+                        success: function(response){
+                            console.log(response);
+                            emptyForm();
+                            /*if(response.status){
+                                $('#contact-form input').val('');
+                                $('#contact-form textarea').val('');
+                            }*/
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 
 </head>
 
@@ -310,24 +368,30 @@
             <div class="row">
                <div class="span9">
 
-                   <form id="contact-form" class="contact-form" action="#">
+                   <div id="contact-form" class="contact-form">
                        <p class="contact-name">
-                          <input id="contact_name" type="text" placeholder="Full Name" value="" name="name" />
+                          <input id="name" type="text" placeholder="Full Name" value="" name="name" />
                       </p>
                       <p class="contact-email">
-                       <input id="contact_email" type="text" placeholder="Email Address" value="" name="email" />
+                       <input id="email" type="text" placeholder="Email Address" value="" name="email" />
                    </p>
+                        <p class="contact-name">
+                          <input id="company" type="text" placeholder="Company" value="" name="company" />
+                        </p>
+                        <p class="contact-name">
+                          <input id="website" type="text" placeholder="Website" value="" name="website" />
+                      </p>
                    <p class="contact-message">
-                       <textarea id="contact_message" placeholder="Your Message" name="message" rows="15" cols="40"></textarea>
+                       <textarea id="content" placeholder="Your Message" name="message" rows="15" cols="40"></textarea>
                    </p>
                    <p class="contact-submit">
-                       <a id="contact-submit" class="submit" href="#">Send Your Email</a>
+                       <input id="contact-submit" type="submit" class="submit">
                    </p>
 
                    <div id="response">
 
                    </div>
-               </form>
+               </div>
 
            </div>
 
@@ -400,7 +464,6 @@
 
 
 <!-- Js -->
-<script src="<?php echo base_url();?>base/new/js/jquery.min.js"></script> <!-- jQuery Core -->
 <script src="<?php echo base_url();?>base/new/js/bootstrap.min.js"></script> <!-- Bootstrap -->
 <script src="<?php echo base_url();?>base/new/js/supersized.3.2.7.min.js"></script> <!-- Slider -->
 <script src="<?php echo base_url();?>base/new/js/waypoints.js"></script> <!-- WayPoints -->
