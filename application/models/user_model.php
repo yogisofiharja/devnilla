@@ -6,11 +6,8 @@ class User_model extends CI_Model{
     var $user_type_id='';
     
     function ceklogin(){
-        $this->db->where('username',
-        $this->input->post('username'));
-        $this->db->where('password',
-        md5($this->input->post('password')));
-        
+        $this->db->where('username', $this->input->post('username'));
+        $this->db->where('password', md5($this->input->post('password')));
         $ambil=$this->db->get('user')->result();
         $ambil=$ambil[0];		
         if($ambil){
