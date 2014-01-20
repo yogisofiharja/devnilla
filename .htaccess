@@ -1,4 +1,4 @@
 RewriteEngine on
-RewriteBase /devnilla
+RewriteBase /devnila
 RewriteCond $1 !^(index\.php|asset|bootstrap|base)
 RewriteRule ^(.*)$ index.php/$1 [L]

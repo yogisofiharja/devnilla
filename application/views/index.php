@@ -11,7 +11,7 @@
 
     <title>Devnila</title>   
 
-    <meta name="description" content="Insert Your Site Description" /> 
+    <meta name="description" content="Devnila" /> 
 
     <!-- Mobile Specifics -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -206,7 +206,7 @@
                     <span class="overlay-img"></span>
                     <!-- <span class="overlay-text-thumb">CTO/Founder</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/img/acong.jpg" alt="John Doe">
+                <img src="<?php echo base_url();?>base/new/img/service/mobile.png">
             </div>
             <h3 class="profile-name">Mobile Application</h3>
             <p class="profile-description">Every mobile application has its own identity and specific function so that the customers will always keep that application in their mind. We'll help you developing your application effectively, good design without leaving the main purpose of your application.</p>
@@ -221,7 +221,7 @@
                     <span class="overlay-img"></span>
                     <!-- <span class="overlay-text-thumb">Creative Director</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/img/ape.jpg" alt="Jane Helf">
+                <img src="<?php echo base_url();?>base/new/img/service/web.png">
             </div>
             <h3 class="profile-name">Web Application</h3>
             <p class="profile-description">Nowadays, website is a information source, promotion media that everybody know. We are here to make an innovation with interactive design. We are good at Company profile website, social networking, e-commerce, e-learning, and Social Media Engagement.</p>
@@ -236,7 +236,7 @@
                     <span class="overlay-img"></span>
                     <!-- <span class="overlay-text-thumb">Lead Designer</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/img/yogi.jpg" alt="Joshua Insanus">
+                <img src="<?php echo base_url();?>base/new/img/service/desktop.png">
             </div>
             <h3 class="profile-name">Desktop Application</h3>
             <p class="profile-description">Desktop application can be a bulls-eye solution for you to manage your company. We can help you build your company Information System and another thematic application to give your company an easy-management so everything will be under your control.</p>
@@ -255,7 +255,7 @@
                     <span class="overlay-img"></span>
                     <!-- <span class="overlay-text-thumb">CTO/Founder</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/img/acong.jpg" alt="John Doe">
+                <img src="<?php echo base_url();?>base/new/img/service/multimedia.png">
             </div>
             <h3 class="profile-name">Media Interactive</h3>
             <p class="profile-description">Media interactive has an important role in Industries and Education wether its for promotion, simulation and training purpose. We can provide you a very best Media Interactive for your need. </p>
@@ -270,7 +270,7 @@
                     <span class="overlay-img"></span>
                     <!-- <span class="overlay-text-thumb">Creative Director</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/img/ape.jpg" alt="Jane Helf">
+                <img src="<?php echo base_url();?>base/new/img/service/network.png">
             </div>
             <h3 class="profile-name">Network Service</h3>
             <p class="profile-description">To complete dissemination of informationin an organization, that's why we have computer networking. We'll help you to fulfill your networking needs with our professional team. We have a good skill in network installation, mail server and server configuration.</p>
@@ -285,7 +285,7 @@
                     <span class="overlay-img"></span>
                     <!-- <span class="overlay-text-thumb">Lead Designer</span> -->
                 </div>
-                <img src="<?php echo base_url();?>base/img/yogi.jpg" alt="Joshua Insanus">
+                <img src="<?php echo base_url();?>base/new/img/service/consult.png">
             </div>
             <h3 class="profile-name">IT Consultant</h3>
             <p class="profile-description">We can help you to find the best suites for your IT needs. We'll design the best solution for all of your IT needs. Whatever you want, We'll fulfill it.</p>
@@ -382,7 +382,7 @@
                           <input id="website" type="text" placeholder="Website" value="" name="website" />
                       </p>
                    <p class="contact-message">
-                       <textarea id="content" placeholder="Your Message" name="message" rows="15" cols="40"></textarea>
+                       <textarea id="content" placeholder="Your Message" name="message" rows="8" cols="40"></textarea>
                    </p>
                    <p class="contact-submit">
                        <input id="contact-submit" type="submit" class="submit">
