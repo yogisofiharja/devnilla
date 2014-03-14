@@ -52,7 +52,7 @@
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
 
     <!-- Fav Icon -->
-    <link rel="shortcut icon" href="#">
+   <link rel="shortcut icon" href="<?php echo base_url();?>base/img/favicon.ico">
 
     <link rel="apple-touch-icon" href="#">
     <link rel="apple-touch-icon" sizes="114x114" href="#">
@@ -71,67 +71,53 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-46996283-1', 'devnila.com');
-        ga('send', 'pageview');
+  ga('create', 'UA-46996283-1', 'devnila.com');
+  ga('send', 'pageview');
 
-    </script>
-    <!-- End Analytics -->
-    <!-- Contact us ajax process-->
-    <script type="text/javascript">
-        function emptyForm(){
-            $("#email").val("");
-            $("#content").val("");
-            $("#name").val("");
-            $("#company").val("");
-            $("#website").val("");
-        }
-        $(document).ready(function(){
-            console.log("i am ready");
-       
+  </script>
+  <!-- End Analytics -->
+  <!-- Contact us ajax process-->
+  <script type="text/javascript">
+  function emptyForm(){
+    $("#email").val("");
+    $("#content").val("");
+    $("#name").val("");
+    $("#company").val("");
+    $("#website").val("");
+}
+$(document).ready(function(){
 
-            $("#contact-submit").click(function(e){
-                e.preventDefault();
-                if($("#email").val()==""){
-                    $("#email").focus();
-                }else if($("#content").val()==""){
-                    $("#content").focus();
-                }else{
-                    console.log("terpenuhi");
-                    var name = $("#name").val();
-                    var email = $("#email").val();
-                    var company = $("#company").val();
-                    var website = $("#website").val();
-                    var content = $("#content").val();
+    $("#contact-submit").click(function(e){
+        e.preventDefault();
+        if($("#email").val()==""){
+            $("#email").focus();
+        }else if($("#content").val()==""){
+            $("#content").focus();
+        }else{
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var company = $("#company").val();
+            var website = $("#website").val();
+            var content = $("#content").val();
+            emptyForm();
+            $('#response').html("<p>Thank you :)</p>");
+            setTimeout(function(){
+                $('#response').html("<p></p>");
+            },5000);
 
-                    /*$.post("<?php echo base_url()?>contact/simpan",{
-                        name:name,
-                        email:email,
-                        company:company,
-                        website:website,
-                        content:content
-                    }, function(data){
-                        emptyForm();
-                        //set alert
-                        console.log(data)
-                    }, "json");*/
-                    $.ajax({
-                        type: 'POST',
-                        url: "<?php echo base_url();?>contact/simpan",
-                        data: {name:name,email:email,company:company,website:website,content:content},
-                        dataType: "json",
-                        success: function(response){
-                            console.log(response);
-                            emptyForm();
-                            /*if(response.status){
-                                $('#contact-form input').val('');
-                                $('#contact-form textarea').val('');
-                            }*/
+
+    $.ajax({
+        type: 'POST',
+        url: "<?php echo base_url();?>contact/simpan",
+        data: {name:name,email:email,content:content},
+        dataType: "json",
+        success: function(response){
                         }
                     });
-                }
-            });
-        });
-    </script>
+        }
+});
+});
+</script>
 
 </head>
 
@@ -327,7 +313,7 @@
             </div>
             <div class="row">
                 <div class="span6">
-                    <h4>
+                    <h4><br/>
                         We are Devnila, Indonesia-based IT developer that has very big passionate in Mobile Application, Web Application and Networking.
                     </h4>
                 </div>
@@ -336,11 +322,13 @@
                 <div class="span3">
                 </div>
                 <div class="span6">
+                    <br/>
                     <h4>Online and Mobile application has an important role in developing your business. Nowadays everybody needs a connection, everybody will find information through the internet. </h4>
                 </div>
             </div>
             <div class="row">
                 <div class="span6">
+                    <br/>
                     <h4>We're coming to this world to help. We give you technology, make you as our partners to help your brand, and connect with your customers.</h4>
                 </div>
 
@@ -375,12 +363,6 @@
                       <p class="contact-email">
                        <input id="email" type="text" placeholder="Email Address" value="" name="email" />
                    </p>
-                        <p class="contact-name">
-                          <input id="company" type="text" placeholder="Company" value="" name="company" />
-                        </p>
-                        <p class="contact-name">
-                          <input id="website" type="text" placeholder="Website" value="" name="website" />
-                      </p>
                    <p class="contact-message">
                        <textarea id="content" placeholder="Your Message" name="message" rows="8" cols="40"></textarea>
                    </p>
@@ -389,7 +371,7 @@
                    </p>
 
                    <div id="response">
-
+                        <p></p>
                    </div>
                </div>
 
@@ -400,9 +382,9 @@
                   <h3>Contact Details</h3>
                   <ul>
                     <li><a href="mailto:support@devnila.com">support@devnila.com</a></li>
-                    <li>+6282126707069</li>
+                    <li>+62 22 2536580</li>
                     <li>
-                        Devnila
+                        Devnila Corp
                         <br>
                         Jalan Gagak, 144, Bandung
                         <br>
@@ -427,32 +409,32 @@
 
 
 <!-- Socialize -->
-<!-- <div id="social-area" class="page">
+<div id="social-area" class="page">
 	<div class="container">
     	<div class="row">
             <div class="span12">
                 <nav id="social">
                     <ul>
-                        <li><a href="https://twitter.com/Bluxart" title="Follow Me on Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a></li>
-                        <li><a href="http://dribbble.com/Bluxart" title="Follow Me on Dribbble" target="_blank"><span class="font-icon-social-dribbble"></span></a></li>
+                        <li><a href="https://twitter.com/devnilacorp" title="Follow Me on Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a></li>
+                        <!-- <li><a href="http://dribbble.com/Bluxart" title="Follow Me on Dribbble" target="_blank"><span class="font-icon-social-dribbble"></span></a></li>
                         <li><a href="http://forrst.com/people/Bluxart" title="Follow Me on Forrst" target="_blank"><span class="font-icon-social-forrst"></span></a></li>
                         <li><a href="http://www.behance.net/alessioatzeni" title="Follow Me on Behance" target="_blank"><span class="font-icon-social-behance"></span></a></li>
-                        <li><a href="https://www.facebook.com/Bluxart" title="Follow Me on Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a></li>
-                        <li><a href="https://plus.google.com/105500420878314068694" title="Follow Me on Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a></li>
-                        <li><a href="http://www.linkedin.com/in/alessioatzeni" title="Follow Me on LinkedIn" target="_blank"><span class="font-icon-social-linkedin"></span></a></li>
+                        <li><a href="https://www.facebook.com/Bluxart" title="Follow Me on Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a></li> -->
+                        <li><a href="https://plus.google.com/115073453612523144177" title="Follow Me on Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a></li>
+                        <!-- <li><a href="http://www.linkedin.com/in/alessioatzeni" title="Follow Me on LinkedIn" target="_blank"><span class="font-icon-social-linkedin"></span></a></li>
                         <li><a href="http://themeforest.net/user/Bluxart" title="Follow Me on ThemeForest" target="_blank"><span class="font-icon-social-envato"></span></a></li>
-                        <li><a href="http://zerply.com/Bluxart/public" title="Follow Me on Zerply" target="_blank"><span class="font-icon-social-zerply"></span></a></li>
+                        <li><a href="http://zerply.com/Bluxart/public" title="Follow Me on Zerply" target="_blank"><span class="font-icon-social-zerply"></span></a></li> -->
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <!-- End Socialize -->
 
 <!-- Footer -->
 <footer>
-	<p class="credits">&copy;2013 Brushed. <a href="http://themes.alessioatzeni.com/html/brushed/" title="Brushed | Responsive One Page Template">Brushed Template</a> by <a href="http://www.alessioatzeni.com/" title="Alessio Atzeni | Web Designer &amp; Front-end Developer">Alessio Atzeni</a></p>
+	<!-- <p class="credits">&copy;2013 Brushed. <a href="http://themes.alessioatzeni.com/html/brushed/" title="Brushed | Responsive One Page Template">Brushed Template</a> by <a href="http://www.alessioatzeni.com/" title="Alessio Atzeni | Web Designer &amp; Front-end Developer">Alessio Atzeni</a></p> -->
 </footer>
 <!-- End Footer -->
 
@@ -487,7 +469,7 @@ $(document).ready(function(){
     div: '#map',
     lat: -6.894681860424366,
     lng: 107.62804627418518,
-    zoom: 13,
+    zoom: 15,
     zoomControl : true, 
     zoomControlOpt: { style : 'SMALL', position: 'TOP_RIGHT' },
     panControl : false,

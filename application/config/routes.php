@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "new/beranda";
 $route['admin'] = "admin/get";
 $route['new'] = "new/beranda";
 $route['404_override'] = ''; 
