@@ -52,7 +52,7 @@
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
 
     <!-- Fav Icon -->
-   <link rel="shortcut icon" href="<?php echo base_url();?>base/img/favicon.ico">
+   <link rel="shortcut icon" href="<?php echo base_url();?>base/img/favicon.png">
 
     <link rel="apple-touch-icon" href="#">
     <link rel="apple-touch-icon" sizes="114x114" href="#">
